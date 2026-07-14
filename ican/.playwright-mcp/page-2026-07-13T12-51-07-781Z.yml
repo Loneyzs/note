@@ -1,0 +1,35 @@
+- generic [ref=f1e2]:
+  - paragraph [ref=f1e5]: 让智能制造更简单
+  - generic [ref=f1e6]:
+    - heading "欢迎登录" [level=3] [ref=f1e7]
+    - paragraph [ref=f1e8]:
+      - text: 没有账号?
+      - link "注册" [ref=f1e9] [cursor=pointer]:
+        - /url: /loginRegist?type=Register&smallType=Register
+    - generic [ref=f1e10]:
+      - generic [ref=f1e12]:
+        - navigation [ref=f1e13]:
+          - generic [ref=f1e14] [cursor=pointer]: 密码登录
+          - generic [ref=f1e15] [cursor=pointer]: 短信登录
+        - generic [ref=f1e16]:
+          - generic [ref=f1e17]:
+            - generic [ref=f1e18]: "账号:"
+            - textbox "请输入手机号 / 邮箱" [ref=f1e21]
+          - generic [ref=f1e22]:
+            - generic [ref=f1e23]: "密码:"
+            - textbox "请输入密码" [ref=f1e26]
+        - button "登录" [ref=f1e27] [cursor=pointer]
+        - generic [ref=f1e28]:
+          - generic [ref=f1e29] [cursor=pointer]:
+            - generic [ref=f1e30]:
+              - checkbox "我已阅读并接受" [checked]
+            - generic [ref=f1e32]: 我已阅读并接受
+          - generic [ref=f1e33] [cursor=pointer]: 《用户协议》
+          - text: 和
+          - generic [ref=f1e34] [cursor=pointer]: 《隐私政策》
+        - generic [ref=f1e36]:
+          - link "忘记密码" [ref=f1e37] [cursor=pointer]:
+            - /url: /loginRegist?type=Register&smallType=reset
+          - link "立即注册" [ref=f1e39] [cursor=pointer]:
+            - /url: /loginRegist?type=Register&smallType=Register
+      - text: 

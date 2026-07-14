@@ -1,0 +1,118 @@
+- generic [ref=e5]:
+  - generic [ref=e6]:
+    - generic [ref=e7]:
+      - link "首页" [ref=e9] [cursor=pointer]:
+        - /url: /
+      - link "在线开发" [ref=e12] [cursor=pointer]:
+        - /url: /projectCenter?asyncRoute=projectList
+      - link "帮助" [ref=e15] [cursor=pointer]:
+        - /url: /document/
+      - link "反馈" [ref=e17] [cursor=pointer]:
+        - /url: /Help/Feedback
+    - generic [ref=e20]:
+      - link "登录" [ref=e21] [cursor=pointer]:
+        - /url: /loginRegist?type=Login&smallType=Login
+      - link "注册" [ref=e22] [cursor=pointer]:
+        - /url: /loginRegist?type=Register&smallType=Register
+  - generic [ref=e23]:
+    - generic [ref=e24]:
+      - button "" [ref=e25] [cursor=pointer]
+      - button "" [ref=e27] [cursor=pointer]
+      - generic [ref=e30]:
+        - generic [ref=e31]: 智能制造
+        - generic [ref=e32]: FDSim 助力智能制造
+        - button "创建我的3D项目" [ref=e33] [cursor=pointer]
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - generic [ref=e39]: 
+          - generic [ref=e40]: 简单易学
+        - generic [ref=e41]:
+          - generic [ref=e42]: 
+          - generic [ref=e43]: 提升效率
+        - generic [ref=e44]:
+          - generic [ref=e45]: 
+          - generic [ref=e46]: 快速搭建
+        - generic [ref=e47]:
+          - generic [ref=e48]: 
+          - generic [ref=e49]: 丰富模型
+    - list [ref=e50]:
+      - listitem [ref=e51] [cursor=pointer]:
+        - button [ref=e52]
+      - listitem [ref=e53] [cursor=pointer]:
+        - button [ref=e54]
+      - listitem [ref=e55] [cursor=pointer]:
+        - button [ref=e56]
+  - generic [ref=e58]:
+    - generic [ref=e59]:
+      - generic [ref=e61]: 
+      - generic [ref=e62]: 
+      - text: 开发六流程
+      - generic [ref=e63]: 
+      - generic [ref=e64]: 
+    - generic [ref=e66]:
+      - generic [ref=e67]:
+        - generic [ref=e69]: "01"
+        - generic [ref=e70]: 建立组件
+        - generic [ref=e71]: 通过丰富的零部件库，从底层开始建立组件，自由添加关节、属性和行为，可按照需求方便灵活地建立组件
+      - generic [ref=e72]:
+        - generic [ref=e74]: "02"
+        - generic [ref=e75]: 搭建3D场景
+        - generic [ref=e76]: 从组件库中拖拽组件搭建多层次场景，从工厂级到产线级再到设备级场景，官方提供完备的工业生产所需组件。也可自由修改官方组件和私人组
+      - generic [ref=e77]:
+        - generic [ref=e79]: "03"
+        - generic [ref=e80]: 设计动作
+        - generic [ref=e81]: 通过编辑模式，让场景中各组件的信号和接口产生连接，进行场景内部数据交互，并设计相应动作。也可通过API进行ThreeJS脚本编辑，自由设计行为动作
+      - generic [ref=e82]:
+        - generic [ref=e84]: "04"
+        - generic [ref=e85]: 搭建2D看板
+        - generic [ref=e86]: 通过看板模式给项目中每个场景设计看板，可使用收藏或上传的各类私人看板，也可使用官方提供的精美看板，自由给看板设计多种数据呈现类型
+      - generic [ref=e87]:
+        - generic [ref=e89]: "05"
+        - generic [ref=e90]: 对接数据
+        - generic [ref=e91]: 对接PLC信号数据，连接3D场景中的组件和外界信号，让场景组件和现实设备交互。对接看板数据信号，让数据可视化，宏观把控生产
+      - generic [ref=e92]:
+        - generic [ref=e94]: "06"
+        - generic [ref=e95]: 发布项目
+        - generic [ref=e96]: 开发完成的项目，可选择在线发布或本地化部署，使项目为工业生产提供助力
+  - generic [ref=e98]:
+    - generic [ref=e99]:
+      - generic [ref=e101]: 
+      - generic [ref=e102]: 
+      - text: 经典案例展示
+      - generic [ref=e103]: 
+      - generic [ref=e104]: 
+    - list [ref=e107]:
+      - listitem [ref=e108] [cursor=pointer]: 智能示范线
+      - listitem [ref=e109] [cursor=pointer]: 虚拟融合
+      - listitem [ref=e110] [cursor=pointer]: 智慧工厂
+      - listitem [ref=e111] [cursor=pointer]: 风车监控
+      - listitem [ref=e112] [cursor=pointer]: 更多案例...
+  - link [ref=e118] [cursor=pointer]:
+    - /url: mailto:fdsim@vip.163.com?subject=FDSim.com用户&body=
+  - contentinfo [ref=e119]:
+    - generic [ref=e120]:
+      - generic [ref=e121]:
+        - generic [ref=e122]: 产品
+        - generic [ref=e123]: FDSim 平台
+        - generic [ref=e124]: FDSim 3D工厂搭建
+        - generic [ref=e125]: FDSim 3D模型库
+      - generic [ref=e126]:
+        - generic [ref=e127]: 服务与支持
+        - generic [ref=e128]: 文档中心
+        - generic [ref=e129]: 帮助中心
+        - generic [ref=e130]: 开发者空间
+        - generic [ref=e131]: 提交反馈
+      - generic [ref=e132]:
+        - generic [ref=e133]: 关于我们
+        - generic [ref=e134]: 公司介绍
+        - generic [ref=e135]: 官方博客
+        - generic [ref=e136]: 合作伙伴
+      - generic [ref=e137]:
+        - generic [ref=e138]: 联系我们
+        - generic [ref=e139]:
+          - text: Email：
+          - link "fdsim@vip.163.com" [ref=e140] [cursor=pointer]:
+            - /url: mailto:fdsim@vip.163.com?subject=FDSim.com用户&body=
+        - generic [ref=e141]: QQ：2016423239
+    - link "沪ICP备2022034660号-1" [ref=e143] [cursor=pointer]:
+      - /url: https://beian.miit.gov.cn/

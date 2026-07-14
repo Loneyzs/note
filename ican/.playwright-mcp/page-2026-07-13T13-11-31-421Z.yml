@@ -1,0 +1,106 @@
+- generic [ref=f2e3]:
+  - generic [ref=f2e4]:
+    - generic [ref=f2e5]:
+      - img "logo" [ref=f2e6] [cursor=pointer]
+      - generic [ref=f2e7]:
+        - generic [ref=f2e8]: 
+        - generic [ref=f2e11] [cursor=pointer]: 
+        - generic [ref=f2e14] [cursor=pointer]: 
+        - generic [ref=f2e15] [cursor=pointer]: 
+      - generic [ref=f2e18]:
+        - generic [ref=f2e19]: 布局
+        - generic [ref=f2e20]: 建模
+        - generic [ref=f2e21]: 编程
+        - generic [ref=f2e22]: 通信
+    - generic [ref=f2e23]: test
+    - generic [ref=f2e24] [cursor=pointer]: 4.3.7
+  - generic [ref=f2e1137]:
+    - generic [ref=f2e1216] [cursor=pointer]:
+      - generic [ref=f2e1217]: 添加服务器
+      - paragraph
+    - generic:
+      - generic: 删除
+      - paragraph
+    - generic:
+      - generic: 配对变量
+      - paragraph
+    - generic:
+      - generic: 显示变量
+      - paragraph
+    - generic [ref=f2e1142] [cursor=pointer]:
+      - generic [ref=f2e1144]: 可配节点
+      - paragraph
+  - generic:
+    - generic:
+      - text: 
+      - generic [ref=f2e1145]:
+        - generic [ref=f2e1146]:
+          - button [ref=f2e1147] [cursor=pointer]
+          - generic [ref=f2e1148]:
+            - tablist [ref=f2e1152]:
+              - tab "服务器列表" [selected] [ref=f2e1153]
+              - tab "场景资源管理器" [ref=f2e1154]
+            - tabpanel "服务器列表" [ref=f2e1156]:
+              - generic [ref=f2e1157]: 通用服务器
+              - generic [ref=f2e1164] [cursor=pointer]: 自定义服务器
+              - tree [ref=f2e1171]:
+                - treeitem " OPC UA " [expanded] [active] [ref=f2e1172]:
+                  - generic [ref=f2e1173] [cursor=pointer]:
+                    - generic [ref=f2e1174]: 
+                    - generic [ref=f2e1175]:
+                      - generic [ref=f2e1176]: OPC UA
+                      - button "" [ref=f2e1179]
+                  - group
+        - list [ref=f2e1182]:
+          - listitem [ref=f2e1183] [cursor=pointer]
+          - listitem [ref=f2e1186] [cursor=pointer]:
+            - generic [ref=f2e1187]: 
+          - listitem [ref=f2e1188] [cursor=pointer]:
+            - generic [ref=f2e1189]: 
+          - listitem [ref=f2e1190] [cursor=pointer]:
+            - generic [ref=f2e1191]: 
+          - listitem [ref=f2e1192] [cursor=pointer]
+          - listitem [ref=f2e1195] [cursor=pointer]
+          - listitem [ref=f2e1198] [cursor=pointer]
+          - listitem [ref=f2e1201] [cursor=pointer]
+          - listitem [ref=f2e1204] [cursor=pointer]
+          - listitem [ref=f2e1207] [cursor=pointer]
+          - listitem [ref=f2e1210] [cursor=pointer]
+          - listitem [ref=f2e1213] [cursor=pointer]
+    - generic: 
+  - generic [ref=f2e118]:
+    - generic [ref=f2e119]:
+      - generic [ref=f2e120]: "FPS:"
+      - generic [ref=f2e121]: "60"
+    - generic [ref=f2e122]:
+      - generic [ref=f2e123]: "mb:"
+      - generic [ref=f2e124]: "144"
+  - generic [ref=f2e128]:
+    - list [ref=f2e129]:
+      - listitem [ref=f2e130]: 场景
+      - listitem [ref=f2e131]:
+        - generic [ref=f2e132]: 
+      - listitem [ref=f2e133]:
+        - generic [ref=f2e134]: 
+      - listitem [ref=f2e135]:
+        - generic [ref=f2e136]: 
+      - listitem [ref=f2e137]:
+        - generic [ref=f2e138]: 
+      - listitem [ref=f2e139] [cursor=pointer]
+      - listitem [ref=f2e142] [cursor=pointer]
+    - list [ref=f2e145]:
+      - listitem [ref=f2e146]
+      - listitem [ref=f2e149]
+      - listitem [ref=f2e152]
+      - listitem [ref=f2e155]
+  - generic [ref=f2e158]:
+    - generic [ref=f2e159] [cursor=pointer]: 
+    - generic [ref=f2e160] [cursor=pointer]: 
+    - generic [ref=f2e161] [cursor=pointer]: 
+    - generic [ref=f2e162]:
+      - generic [ref=f2e163]: "00"
+      - generic [ref=f2e164]: :00
+      - generic [ref=f2e165]: :00
+    - generic [ref=f2e166]:
+      - generic [ref=f2e167]: "实时:"
+      - generic [ref=f2e170] [cursor=pointer]: x 1

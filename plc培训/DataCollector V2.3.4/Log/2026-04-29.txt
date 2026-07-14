@@ -1,0 +1,2 @@
+﻿2026-04-29 18:28:09.029   [WARN]   Websocket客户端  2026/4/29 18:28:09 和示教器：192.168.0.151建立连接失败:AUBO机器人:连接机器人服务器失败
+2026-04-29 18:28:09.138   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。

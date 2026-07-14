@@ -1,0 +1,4 @@
+﻿2026-04-21 22:20:12.553   [INFO]   连接OPC           OPC UA服务器：opc.tcp://127.0.0.1:49320 连接成功。
+2026-04-21 22:45:37.666   [INFO]   Websocket客户端  订阅opc服务端：opc.tcp://127.0.0.1:49320 数据成功。
+2026-04-21 22:45:37.667   [WARN]   Websocket客户端  Error establishing a connection: BadNotConnected
+2026-04-21 22:45:39.192   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。

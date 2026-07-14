@@ -1,0 +1,4 @@
+2026-04-14 23:41:17  WARN       Websocket客户端  2026/4/14 23:41:04 和示教器：192.168.56.101建立连接失败:请检查ip地址是否正确。
+2026-04-14 23:41:24  INFO       Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-04-14 23:42:41.227 [WARN] Websocket客户端  2026/4/14 23:42:41 和示教器：192.168.56.101建立连接失败:请检查ip地址是否正确。
+2026-04-14 23:42:42  INFO       Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。

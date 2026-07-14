@@ -1,0 +1,159 @@
+- generic [ref=f2e3]:
+  - generic [ref=f2e4]:
+    - generic [ref=f2e5]:
+      - img "logo" [ref=f2e6] [cursor=pointer]
+      - generic [ref=f2e7]:
+        - generic [ref=f2e8]: 
+        - generic [ref=f2e11] [cursor=pointer]: 
+        - generic [ref=f2e14] [cursor=pointer]: 
+        - generic [ref=f2e15] [cursor=pointer]: 
+      - generic [ref=f2e18]:
+        - generic [ref=f2e19]: 布局
+        - generic [ref=f2e20]: 建模
+        - generic [ref=f2e21]: 编程
+        - generic [ref=f2e22]: 通信
+    - generic [ref=f2e23]: test
+    - generic [ref=f2e24] [cursor=pointer]: 4.3.7
+  - generic [ref=f2e990]:
+    - generic [ref=f2e991] [cursor=pointer]:
+      - generic [ref=f2e993]: 删除
+      - paragraph
+    - generic [ref=f2e994] [cursor=pointer]:
+      - generic [ref=f2e996]: 平移
+      - paragraph
+    - generic [ref=f2e997] [cursor=pointer]:
+      - generic [ref=f2e999]: 旋转
+      - paragraph
+    - generic [ref=f2e1000] [cursor=pointer]:
+      - generic [ref=f2e1002]: 操作
+      - paragraph
+    - generic [ref=f2e1003] [cursor=pointer]:
+      - generic [ref=f2e1005]: 测量
+      - paragraph
+    - generic [ref=f2e1006] [cursor=pointer]:
+      - generic [ref=f2e1008]: 捕捉
+      - paragraph
+    - generic [ref=f2e1009] [cursor=pointer]:
+      - generic [ref=f2e1011]: 对齐
+      - paragraph
+    - generic [ref=f2e1012] [cursor=pointer]:
+      - generic [ref=f2e1014]: 点对点运动
+      - paragraph
+    - generic [ref=f2e1015] [cursor=pointer]:
+      - generic [ref=f2e1017]: 线性运动
+      - paragraph
+    - generic [ref=f2e1018] [cursor=pointer]:
+      - generic [ref=f2e1020]: 路径运动
+      - paragraph
+    - generic [ref=f2e1021] [cursor=pointer]:
+      - generic [ref=f2e1023]: 关节运动
+      - paragraph
+    - generic [ref=f2e1024] [cursor=pointer]:
+      - generic [ref=f2e1026]: 等待输入
+      - paragraph
+    - generic [ref=f2e1027] [cursor=pointer]:
+      - generic [ref=f2e1029]: 等待
+      - paragraph
+    - generic [ref=f2e1030] [cursor=pointer]:
+      - generic [ref=f2e1032]: 注释
+      - paragraph
+    - generic [ref=f2e1033] [cursor=pointer]:
+      - generic [ref=f2e1035]: 设置输出
+      - paragraph
+    - generic [ref=f2e1036] [cursor=pointer]:
+      - generic [ref=f2e1038]: 条件语句
+      - paragraph
+    - generic [ref=f2e1039] [cursor=pointer]:
+      - generic [ref=f2e1041]: 循环语句
+      - paragraph
+    - generic [ref=f2e1042] [cursor=pointer]:
+      - generic [ref=f2e1044]: 变量赋值
+      - paragraph
+    - generic [ref=f2e1045] [cursor=pointer]:
+      - generic [ref=f2e1047]: 程序调用
+      - paragraph
+    - generic [ref=f2e1048] [cursor=pointer]:
+      - generic [ref=f2e1050]: 呼叫AGV
+      - paragraph
+    - generic [ref=f2e1051] [cursor=pointer]:
+      - generic [ref=f2e1053]: 信号连接
+      - paragraph
+    - generic [ref=f2e1054] [cursor=pointer]:
+      - generic [ref=f2e1056]: 实时测量
+      - paragraph
+  - generic:
+    - generic:
+      - text: 
+      - generic [ref=f2e1057]:
+        - generic [ref=f2e1058]:
+          - button [ref=f2e1059] [cursor=pointer]
+          - generic [ref=f2e1060]:
+            - tablist [ref=f2e1064]:
+              - tab "程序编辑器" [selected] [ref=f2e1065]
+              - tab "场景资源管理器" [ref=f2e1066]
+            - tabpanel "程序编辑器" [ref=f2e1068]:
+              - generic [ref=f2e1070]:
+                - generic [ref=f2e1071]:
+                  - generic [ref=f2e1072]: 程序列表
+                  - generic [ref=f2e1073]:
+                    - generic [ref=f2e1074]: 
+                    - generic [ref=f2e1079]: 
+                - generic [ref=f2e1081]: Main
+                - paragraph [ref=f2e1090]: Main
+                - list [ref=f2e1131]:
+                  - listitem [ref=f2e1132]: PTP P1 Speed1 Force1
+        - list [ref=f2e1096]:
+          - listitem [ref=f2e1097] [cursor=pointer]
+          - listitem [ref=f2e1100] [cursor=pointer]:
+            - generic [ref=f2e1101]: 
+          - listitem [ref=f2e1102] [cursor=pointer]:
+            - generic [ref=f2e1103]: 
+          - listitem [ref=f2e1104] [cursor=pointer]:
+            - generic [ref=f2e1105]: 
+          - listitem [ref=f2e1106] [cursor=pointer]
+          - listitem [ref=f2e1109] [cursor=pointer]
+          - listitem [ref=f2e1112] [cursor=pointer]
+          - listitem [ref=f2e1115] [cursor=pointer]
+          - listitem [ref=f2e1118] [cursor=pointer]
+          - listitem [ref=f2e1121] [cursor=pointer]
+          - listitem [ref=f2e1124] [cursor=pointer]
+          - listitem [ref=f2e1127] [cursor=pointer]
+    - generic: 
+  - generic [ref=f2e116]:
+    - generic [ref=f2e118]:
+      - generic [ref=f2e119]:
+        - generic [ref=f2e120]: "FPS:"
+        - generic [ref=f2e121]: "154"
+      - generic [ref=f2e122]:
+        - generic [ref=f2e123]: "mb:"
+        - generic [ref=f2e124]: "159"
+    - generic: P1
+  - generic [ref=f2e128]:
+    - list [ref=f2e129]:
+      - listitem [ref=f2e130]: 场景
+      - listitem [ref=f2e131]:
+        - generic [ref=f2e132]: 
+      - listitem [ref=f2e133]:
+        - generic [ref=f2e134]: 
+      - listitem [ref=f2e135]:
+        - generic [ref=f2e136]: 
+      - listitem [ref=f2e137]:
+        - generic [ref=f2e138]: 
+      - listitem [ref=f2e139] [cursor=pointer]
+      - listitem [ref=f2e142] [cursor=pointer]
+    - list [ref=f2e145]:
+      - listitem [ref=f2e146]
+      - listitem [ref=f2e149]
+      - listitem [ref=f2e152]
+      - listitem [ref=f2e155]
+  - generic [ref=f2e158]:
+    - generic [ref=f2e159] [cursor=pointer]: 
+    - generic [ref=f2e160] [cursor=pointer]: 
+    - generic [ref=f2e161] [cursor=pointer]: 
+    - generic [ref=f2e162]:
+      - generic [ref=f2e163]: "00"
+      - generic [ref=f2e164]: :00
+      - generic [ref=f2e165]: :00
+    - generic [ref=f2e166]:
+      - generic [ref=f2e167]: "实时:"
+      - generic [ref=f2e170] [cursor=pointer]: x 1

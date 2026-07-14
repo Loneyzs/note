@@ -1,0 +1,164 @@
+- generic [ref=f2e3]:
+  - generic [ref=f2e4]:
+    - generic [ref=f2e5]:
+      - img "logo" [ref=f2e6] [cursor=pointer]
+      - generic [ref=f2e7]:
+        - generic [ref=f2e8]: 
+        - generic [ref=f2e11] [cursor=pointer]: 
+        - generic [ref=f2e14] [cursor=pointer]: 
+        - generic [ref=f2e15] [cursor=pointer]: 
+      - generic [ref=f2e18]:
+        - generic [ref=f2e19]: 布局
+        - generic [ref=f2e20]: 建模
+        - generic [ref=f2e21]: 编程
+        - generic [ref=f2e22]: 通信
+    - generic [ref=f2e23]: test
+    - generic [ref=f2e24] [cursor=pointer]: 4.3.7
+  - generic [ref=f2e29]:
+    - generic [ref=f2e1493]:
+      - generic [ref=f2e1627] [cursor=pointer]:
+        - generic [ref=f2e1628]: 删除
+        - paragraph
+      - generic [ref=f2e1495] [cursor=pointer]:
+        - generic [ref=f2e1497]: 选择
+        - paragraph
+      - generic [ref=f2e1629] [cursor=pointer]:
+        - generic [ref=f2e1630]: 移动
+        - paragraph
+      - generic [ref=f2e1631] [cursor=pointer]:
+        - generic [ref=f2e1632]: 旋转
+        - paragraph
+      - generic [ref=f2e1633] [cursor=pointer]:
+        - generic [ref=f2e1634]: 操作
+        - paragraph
+      - generic [ref=f2e1501] [cursor=pointer]:
+        - generic [ref=f2e1502]: 
+        - generic [ref=f2e1504]: 新建组件
+        - paragraph
+      - generic:
+        - generic: 提取组件
+        - paragraph
+      - generic [ref=f2e1635] [cursor=pointer]:
+        - generic [ref=f2e1636]: 保存
+        - paragraph
+      - generic [ref=f2e1507] [cursor=pointer]:
+        - generic [ref=f2e1509]: 测量
+        - paragraph
+      - generic [ref=f2e1637] [cursor=pointer]:
+        - generic [ref=f2e1638]: 捕捉
+        - paragraph
+      - generic [ref=f2e1639] [cursor=pointer]:
+        - generic [ref=f2e1640]: 对齐
+        - paragraph
+      - generic [ref=f2e1641] [cursor=pointer]:
+        - generic [ref=f2e1642]: 新建节点
+        - paragraph
+      - generic [ref=f2e1643] [cursor=pointer]:
+        - generic [ref=f2e1644]: 导入网格
+        - paragraph
+      - generic [ref=f2e1645] [cursor=pointer]:
+        - generic [ref=f2e1514]: 
+        - generic [ref=f2e1646]: 基础网格
+        - paragraph
+      - generic [ref=f2e1647] [cursor=pointer]:
+        - generic [ref=f2e1516]: 
+        - generic [ref=f2e1648]: 添加属性
+        - paragraph
+      - generic [ref=f2e1649] [cursor=pointer]:
+        - generic [ref=f2e1518]: 
+        - generic [ref=f2e1650]: 添加行为
+        - paragraph
+    - generic [ref=f2e1520]:
+      - generic [ref=f2e1521]:
+        - generic [ref=f2e1522]: 尺寸
+        - textbox [disabled] [ref=f2e1523]: "100"
+        - generic [ref=f2e1524]: mm
+      - generic [ref=f2e1525]:
+        - generic [ref=f2e1526]: 角度
+        - textbox [disabled] [ref=f2e1527]: "45"
+        - generic [ref=f2e1528]: °
+    - generic [ref=f2e1529]:
+      - generic [ref=f2e1530] [cursor=pointer]:
+        - generic [ref=f2e1531]:
+          - checkbox "自动尺寸" [checked]
+        - generic [ref=f2e1533]: 自动尺寸
+      - generic [ref=f2e1534] [cursor=pointer]:
+        - generic [ref=f2e1535]:
+          - checkbox "始终捕捉"
+        - generic [ref=f2e1537]: 始终捕捉
+  - generic:
+    - generic:
+      - text: 
+      - generic [ref=f2e1538]:
+        - generic [ref=f2e1539]:
+          - button [ref=f2e1540] [cursor=pointer]
+          - generic [ref=f2e1541]:
+            - tablist [ref=f2e1545]:
+              - tab "结构树" [ref=f2e1546]
+              - tab "场景资源管理器" [selected] [ref=f2e1547]
+            - generic [ref=f2e1548]:
+              - text:    
+              - tabpanel "场景资源管理器" [ref=f2e1594]:
+                - generic [ref=f2e1597]:
+                  - generic [ref=f2e1598]:
+                    - button "添加分类" [ref=f2e1599] [cursor=pointer]
+                    - textbox "请输入关键字" [ref=f2e1601]
+                  - tree [ref=f2e1602]:
+                    - treeitem [ref=f2e1603]:
+                      - 'generic "icon: down" [ref=f2e1605] [cursor=pointer]'
+                      - generic [ref=f2e1608] [cursor=pointer]: 场景
+                      - group [ref=f2e1612]:
+                        - treeitem [ref=f2e1613]
+        - list [ref=f2e1560]:
+          - listitem [ref=f2e1561] [cursor=pointer]
+          - listitem [ref=f2e1564] [cursor=pointer]:
+            - generic [ref=f2e1565]: 
+          - listitem [ref=f2e1566] [cursor=pointer]:
+            - generic [ref=f2e1567]: 
+          - listitem [ref=f2e1568] [cursor=pointer]:
+            - generic [ref=f2e1569]: 
+          - listitem [ref=f2e1570] [cursor=pointer]
+          - listitem [ref=f2e1573] [cursor=pointer]
+          - listitem [ref=f2e1576] [cursor=pointer]
+          - listitem [ref=f2e1579] [cursor=pointer]
+          - listitem [ref=f2e1582] [cursor=pointer]
+          - listitem [ref=f2e1585] [cursor=pointer]
+          - listitem [ref=f2e1588] [cursor=pointer]
+          - listitem [ref=f2e1591] [cursor=pointer]
+    - generic: 
+  - generic [ref=f2e118]:
+    - generic [ref=f2e119]:
+      - generic [ref=f2e120]: "FPS:"
+      - generic [ref=f2e121]: "48"
+    - generic [ref=f2e122]:
+      - generic [ref=f2e123]: "mb:"
+      - generic [ref=f2e124]: "121"
+  - generic [ref=f2e128]:
+    - list [ref=f2e129]:
+      - listitem [ref=f2e130]: 场景
+      - listitem [ref=f2e131]:
+        - generic [ref=f2e132]: 
+      - listitem [ref=f2e133]:
+        - generic [ref=f2e134]: 
+      - listitem [ref=f2e135]:
+        - generic [ref=f2e136]: 
+      - listitem [ref=f2e137]:
+        - generic [ref=f2e138]: 
+      - listitem [ref=f2e139] [cursor=pointer]
+      - listitem [ref=f2e142] [cursor=pointer]
+    - list [ref=f2e145]:
+      - listitem [ref=f2e146]
+      - listitem [ref=f2e149]
+      - listitem [ref=f2e152]
+      - listitem [ref=f2e155]
+  - generic [ref=f2e158]:
+    - generic [ref=f2e159] [cursor=pointer]: 
+    - generic [ref=f2e160] [cursor=pointer]: 
+    - generic [ref=f2e161] [cursor=pointer]: 
+    - generic [ref=f2e162]:
+      - generic [ref=f2e163]: "00"
+      - generic [ref=f2e164]: :00
+      - generic [ref=f2e165]: :00
+    - generic [ref=f2e166]:
+      - generic [ref=f2e167]: "实时:"
+      - generic [ref=f2e170] [cursor=pointer]: x 1

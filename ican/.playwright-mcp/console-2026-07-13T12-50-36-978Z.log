@@ -1,0 +1,13 @@
+[   30282ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://www.chromium.org/developers/design-documents/create-amazing-password-forms) %o @ https://fdsim.com/loginRegist?type=Login&smallType=Login:0
+[  104329ms] [LOG] 连接成功 @ https://fdsim.com/static/js/app.dee27db8.js:0
+[ 1005866ms] [WARNING] THREE.FBXLoader: %s map is not supported in three.js, skipping texture. 启用 @ https://fdsim.com/static/js/chunk-libs.6b61dd38.js:72
+[ 1005932ms] [WARNING] THREE.FBXLoader: %s map is not supported in three.js, skipping texture. 启用 @ https://fdsim.com/static/js/chunk-libs.6b61dd38.js:72
+[ 1005975ms] [WARNING] THREE.FBXLoader: %s map is not supported in three.js, skipping texture. 启用 @ https://fdsim.com/static/js/chunk-libs.6b61dd38.js:72
+[ 1006021ms] [WARNING] THREE.FBXLoader: %s map is not supported in three.js, skipping texture. 启用 @ https://fdsim.com/static/js/chunk-libs.6b61dd38.js:72
+[ 1006098ms] [WARNING] THREE.FBXLoader: %s map is not supported in three.js, skipping texture. 启用 @ https://fdsim.com/static/js/chunk-libs.6b61dd38.js:72
+[ 1006142ms] [WARNING] THREE.FBXLoader: %s map is not supported in three.js, skipping texture. 启用 @ https://fdsim.com/static/js/chunk-libs.6b61dd38.js:72
+[ 1006174ms] [WARNING] THREE.FBXLoader: %s map is not supported in three.js, skipping texture. 启用 @ https://fdsim.com/static/js/chunk-libs.6b61dd38.js:72
+[ 1006181ms] [LOG] 完成 @ https://fdsim.com/static/js/chunk-58a7f648.9da807dc.js:64
+[ 1546884ms] [LOG] 完成 @ https://fdsim.com/static/js/chunk-58a7f648.9da807dc.js:64
+[ 1762233ms] [LOG] 完成 @ https://fdsim.com/static/js/chunk-58a7f648.9da807dc.js:64
+[ 1888990ms] [LOG] 完成 @ https://fdsim.com/static/js/chunk-58a7f648.9da807dc.js:64

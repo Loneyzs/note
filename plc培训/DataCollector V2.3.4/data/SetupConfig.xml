@@ -1,0 +1,3 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Setup WebSocketType="server" OpcEnable="True" RobotControllerEnable="True" RobotStudioEnable="False" KukaEnable="False" QueryDbiNodeUrl="https://api.fdsim.com/dbiServer/opc/outerData/queryNodeById" WebsocketUrl="ws://api.fdsim.com/dbiServer/opc/websocket/client/" WSServerDefaultPort="8068" DbiSceneId="3C017B7A-D2CB-48A1-A0C3-0AA873FB6327" SendDataInterval="100" GetRcDataInterval="100" GetAbbVrcDataInterval="100" GetKukaVrcDataInterval="100" LogStorageDays="30" RCProtocol="jaka" PrintRSData="False">
+</Setup>

@@ -1,0 +1,116 @@
+﻿2026-07-08 14:07:22.357   [INFO]   Websocket服务端     Websocket服务器启动成功：ws://localhost:8068
+2026-07-08 14:07:25.787   [INFO]   Websocket服务端     停止ws服务器:ws://localhost:8068。
+2026-07-08 14:07:25.798   [INFO]   Websocket服务端     Websocket服务器：ws://localhost:8068已关闭。
+2026-07-08 14:08:43.021   [INFO]   Websocket服务端     Websocket服务器启动成功：ws://localhost:8068
+2026-07-08 14:08:48.882   [INFO]   Websocket服务端     停止ws服务器:ws://localhost:8068。
+2026-07-08 14:08:48.891   [INFO]   Websocket服务端     Websocket服务器：ws://localhost:8068已关闭。
+2026-07-08 14:16:49.046   [ERROR]   连接OPC             OPC UA服务器：opc.tcp://192.168.3.200:4840  连接失败：无效的 URI: 指定的端口无效。
+2026-07-08 14:16:56.592   [ERROR]   连接OPC             OPC UA服务器：opc.tcp://192.168.3.200:4840  连接失败：无效的 URI: 指定的端口无效。
+2026-07-08 14:17:15.417   [ERROR]   连接OPC             OPC UA服务器：opc.tcp://192.168.3.200:4840  连接失败：无效的 URI: 指定的端口无效。
+2026-07-08 14:22:38.257   [ERROR]   连接OPC             OPC UA服务器：opc.tcp://localhost:4840  连接失败：无效的 URI: 指定的端口无效。
+2026-07-08 14:23:20.080   [INFO]   连接OPC             OPC UA服务器：opc.tcp://localhost:4840 连接成功。
+2026-07-08 14:27:20.686   [INFO]   连接OPC             OPC UA服务器：opc.tcp://localhost:4840 连接成功。
+2026-07-08 14:40:14.836   [INFO]   Websocket客户端     订阅opc服务端：opc.tcp://localhost:4840 数据成功。
+2026-07-08 14:40:14.850   [INFO]   Websocket服务端     Websocket服务器启动成功：ws://192.168.137.1:8068
+2026-07-08 14:48:40.783   [INFO]   Websocket服务端     停止ws服务器:ws://192.168.137.1:8068。
+2026-07-08 14:48:40.840   [INFO]   Websocket服务端     Websocket服务器：ws://localhost:8068已关闭。
+2026-07-08 14:48:42.002   [INFO]   Websocket客户端     订阅opc服务端：opc.tcp://localhost:4840 数据成功。
+2026-07-08 14:48:42.017   [INFO]   Websocket服务端     Websocket服务器启动成功：ws://localhost:8068
+2026-07-08 14:48:42.137   [INFO]   Websocket服务端     停止ws服务器:ws://localhost:8068。
+2026-07-08 14:48:42.187   [INFO]   Websocket服务端     Websocket服务器：ws://localhost:8068已关闭。
+2026-07-08 14:49:10.325   [INFO]   Websocket客户端     订阅opc服务端：opc.tcp://localhost:4840 数据成功。
+2026-07-08 14:49:10.341   [INFO]   Websocket服务端     Websocket服务器启动成功：ws://localhost:8068
+2026-07-08 14:49:23.740   [INFO]   Websocket服务端     Websocket客户端：bff3fcd3928c446dad118d929f43e859 连接成功。
+2026-07-08 14:49:23.744   [WARN]   Websocket服务端     Websocket客户端：bff3fcd3928c446dad118d929f43e859 断开连接,原因：
+2026-07-08 14:50:41.756   [INFO]   Websocket服务端     Websocket客户端：97ca3ad4aa784f3d83894317339ae9ac 连接成功。
+2026-07-08 14:50:41.772   [WARN]   Websocket服务端     Websocket客户端：97ca3ad4aa784f3d83894317339ae9ac 断开连接,原因：
+2026-07-08 14:53:35.098   [INFO]   Websocket服务端     停止ws服务器:ws://localhost:8068。
+2026-07-08 14:53:35.163   [INFO]   Websocket服务端     Websocket服务器：ws://localhost:8068已关闭。
+2026-07-08 15:03:28.968   [INFO]   Websocket客户端     订阅opc服务端：opc.tcp://localhost:4840 数据成功。
+2026-07-08 15:03:28.982   [INFO]   Websocket服务端     Websocket服务器启动成功：ws://localhost:8068
+2026-07-08 15:04:01.095   [INFO]   Websocket服务端     Websocket客户端：feb99b3c0a4c4881926a8504e82033b9 连接成功。
+2026-07-08 15:04:01.096   [WARN]   Websocket服务端     Websocket客户端：feb99b3c0a4c4881926a8504e82033b9 断开连接,原因：
+2026-07-08 15:05:54.130   [INFO]   Websocket服务端     停止ws服务器:ws://localhost:8068。
+2026-07-08 15:05:54.177   [INFO]   Websocket服务端     Websocket服务器：ws://localhost:8068已关闭。
+2026-07-08 15:06:21.695   [INFO]   Websocket客户端     订阅opc服务端：opc.tcp://localhost:4840 数据成功。
+2026-07-08 15:06:21.712   [INFO]   Websocket服务端     Websocket服务器启动成功：ws://localhost:8068
+2026-07-08 15:06:21.894   [INFO]   Websocket服务端     停止ws服务器:ws://localhost:8068。
+2026-07-08 15:06:21.956   [INFO]   Websocket服务端     Websocket服务器：ws://localhost:8068已关闭。
+2026-07-08 15:06:22.819   [INFO]   Websocket客户端     订阅opc服务端：opc.tcp://localhost:4840 数据成功。
+2026-07-08 15:06:22.836   [INFO]   Websocket服务端     Websocket服务器启动成功：ws://localhost:8068
+2026-07-08 15:06:46.922   [INFO]   Websocket服务端     Websocket客户端：ceda1289412442e6965ef24aeb532a58 连接成功。
+2026-07-08 15:06:46.941   [WARN]   Websocket服务端     Websocket客户端：ceda1289412442e6965ef24aeb532a58 断开连接,原因：
+2026-07-08 15:07:48.298   [INFO]   Websocket服务端     Websocket客户端：00ba708de7284753ae49df1aa45598b1 连接成功。
+2026-07-08 15:07:59.354   [INFO]   Websocket服务端     向Websocket客户端：00ba708de7284753ae49df1aa45598b1 发送消息：{
+  "data": {
+    "data": {
+      "6ADBA073-ACD4-4D0C-9F7C-B5488D523F51": false,
+      "7E4384C0-EB65-4E31-868E-E06C8E9DE189": false,
+      "25B2AADE-8B9B-4D98-98BB-5F4918C10847": false,
+      "0F49C675-6B49-43A8-8C34-0745C107D93C": false,
+      "6C8EC55A-0007-42BC-97B1-8C32F931002E": false,
+      "AC897741-4C65-43F1-B727-8DB3EAB49103": false,
+      "signalType": "all"
+    },
+    "id": "00ba708de7284753ae49df1aa45598b1"
+  },
+  "type": "SIGANL"
+}。
+2026-07-08 15:09:56.398   [WARN]   Websocket服务端     Websocket客户端：00ba708de7284753ae49df1aa45598b1 断开连接,原因：
+2026-07-08 15:09:56.398   [INFO]   Websocket服务端     停止ws服务器:ws://localhost:8068。
+2026-07-08 15:09:56.459   [INFO]   Websocket服务端     Websocket服务器：ws://localhost:8068已关闭。
+2026-07-08 15:15:49.269   [INFO]   Websocket客户端     订阅opc服务端：opc.tcp://localhost:4840 数据成功。
+2026-07-08 15:15:49.286   [INFO]   Websocket服务端     Websocket服务器启动成功：ws://localhost:8068
+2026-07-08 15:15:56.903   [INFO]   Websocket服务端     Websocket客户端：d12426c06438438987a731ee03dcfe65 连接成功。
+2026-07-08 15:17:35.256   [INFO]   Websocket服务端     向Websocket客户端：d12426c06438438987a731ee03dcfe65 发送消息：{
+  "data": {
+    "data": {
+      "6ADBA073-ACD4-4D0C-9F7C-B5488D523F51": false,
+      "7E4384C0-EB65-4E31-868E-E06C8E9DE189": false,
+      "25B2AADE-8B9B-4D98-98BB-5F4918C10847": false,
+      "0F49C675-6B49-43A8-8C34-0745C107D93C": false,
+      "6C8EC55A-0007-42BC-97B1-8C32F931002E": false,
+      "AC897741-4C65-43F1-B727-8DB3EAB49103": false,
+      "signalType": "all"
+    },
+    "id": "d12426c06438438987a731ee03dcfe65"
+  },
+  "type": "SIGANL"
+}。
+2026-07-08 15:18:48.047   [WARN]   Websocket服务端     Websocket客户端：d12426c06438438987a731ee03dcfe65 断开连接,原因：
+2026-07-08 15:18:48.048   [INFO]   Websocket服务端     停止ws服务器:ws://localhost:8068。
+2026-07-08 15:18:48.093   [INFO]   Websocket服务端     Websocket服务器：ws://localhost:8068已关闭。
+2026-07-08 15:21:26.999   [INFO]   Websocket客户端     订阅opc服务端：opc.tcp://localhost:4840 数据成功。
+2026-07-08 15:21:27.015   [INFO]   Websocket服务端     Websocket服务器启动成功：ws://localhost:8068
+2026-07-08 15:21:35.388   [INFO]   Websocket服务端     Websocket客户端：36f4afd55d714ece8336d6613170147c 连接成功。
+2026-07-08 15:21:41.865   [INFO]   Websocket服务端     向Websocket客户端：36f4afd55d714ece8336d6613170147c 发送消息：{
+  "data": {
+    "data": {
+      "7E4384C0-EB65-4E31-868E-E06C8E9DE189": false,
+      "2A8CBE87-CEE0-4F87-9B86-CB54332EF485": false,
+      "25B2AADE-8B9B-4D98-98BB-5F4918C10847": false,
+      "0F49C675-6B49-43A8-8C34-0745C107D93C": false,
+      "338B5CAF-CDA9-414B-B29E-0EBF7DA239B1": false,
+      "C295955D-935D-41C5-B481-545F17507D79": false,
+      "13371B5C-D923-45D4-9222-02A5D8E7DD51": false,
+      "70544C4B-B50F-49F0-B20A-BD924A185336": false,
+      "F71E975A-449A-46E5-8DB1-BAD6D1DF52B8": false,
+      "A3EAC271-1992-4CB6-8AF4-1E87B44851EF": true,
+      "9D62A498-3452-452A-8701-A76A104B0DBF": 1000.0,
+      "6C8EC55A-0007-42BC-97B1-8C32F931002E": false,
+      "D50E4FDC-9B77-4695-A721-D72DB41D3F3E": false,
+      "AC897741-4C65-43F1-B727-8DB3EAB49103": false,
+      "6ADBA073-ACD4-4D0C-9F7C-B5488D523F51": false,
+      "8821FB4C-E507-4EB4-AA5B-29FD281228B5": 0,
+      "21940C3E-9752-41AF-9876-CEB7D1866852": false,
+      "5F074B9B-2DE5-4681-A40B-A622298154EF": false,
+      "1447DF2F-67C9-4CFD-AF6E-999416BDC7A5": false,
+      "signalType": "all"
+    },
+    "id": "36f4afd55d714ece8336d6613170147c"
+  },
+  "type": "SIGANL"
+}。
+2026-07-08 15:22:13.969   [WARN]   Websocket服务端     Websocket客户端：36f4afd55d714ece8336d6613170147c 断开连接,原因：
+2026-07-08 16:19:28.926   [INFO]   Websocket服务端     停止ws服务器:ws://localhost:8068。
+2026-07-08 16:19:30.984   [INFO]   Websocket服务端     Websocket服务器：ws://localhost:8068已关闭。

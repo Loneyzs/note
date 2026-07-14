@@ -1,0 +1,6 @@
+﻿2026-05-07 09:33:21.170   [INFO]   Websocket客户端  和示教器：192.168.146.129建立连接成功
+2026-05-07 09:33:21.290   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-05-07 09:34:55.142   [INFO]   Websocket客户端  和示教器：192.168.146.129建立连接成功
+2026-05-07 09:34:55.276   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-05-07 09:35:55.659   [INFO]   Websocket客户端  和示教器：192.168.146.129建立连接成功
+2026-05-07 09:35:55.784   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。

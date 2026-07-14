@@ -1,0 +1,52 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - link "首页" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - link "在线开发" [ref=e10] [cursor=pointer]:
+        - /url: /projectCenter?asyncRoute=projectList
+      - link "帮助" [ref=e13] [cursor=pointer]:
+        - /url: /document/
+      - link "反馈" [ref=e15] [cursor=pointer]:
+        - /url: /Help/Feedback
+    - img "头像" [ref=e22] [cursor=pointer]
+  - generic [ref=e23]:
+    - list [ref=e25]:
+      - listitem [ref=e26]:
+        - generic [ref=e28] [cursor=pointer]:
+          - generic [ref=e29]: 
+          - text: 团队设置
+      - listitem [ref=e30]:
+        - generic [ref=e32] [cursor=pointer]:
+          - generic [ref=e33]: 
+          - text: 项目列表
+      - listitem [ref=e34]:
+        - generic [ref=e36] [cursor=pointer]:
+          - generic [ref=e37]: 
+          - text: 资源管理
+        - generic [ref=e117]:
+          - generic [ref=e118] [cursor=pointer]: 组件库
+          - generic [ref=e119] [cursor=pointer]: 零部件库
+          - generic [ref=e120] [cursor=pointer]: 贴图库
+          - generic [ref=e121] [cursor=pointer]: 环境贴图库
+          - generic [ref=e122] [cursor=pointer]: 场景背景图库
+    - generic [ref=e172]:
+      - generic [ref=e173]:
+        - generic [ref=e174] [cursor=pointer]: 私有
+        - generic [ref=e175] [cursor=pointer]: 收藏
+        - generic [ref=e176]:
+          - textbox "请输入关键字" [ref=e177]
+          - text: 
+      - generic [ref=e178]:
+        - generic [ref=e183]:
+          - generic [ref=e184] [cursor=pointer]: 
+          - generic [ref=e185]: 新建文件夹
+        - generic [ref=e187]:
+          - button "" [disabled] [ref=e188]
+          - list [ref=e190]:
+            - listitem [ref=e191]: "1"
+          - button "" [disabled] [ref=e192]
+          - generic [ref=e194]:
+            - text: 前往
+            - spinbutton [ref=e196]: "1"
+            - text: 页

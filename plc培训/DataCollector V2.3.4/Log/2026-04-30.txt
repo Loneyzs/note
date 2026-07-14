@@ -1,0 +1,22 @@
+﻿2026-04-30 15:36:52.984   [WARN]   Websocket客户端  2026/4/30 15:36:52 和示教器：192.168.146.128建立连接失败:AUBO机器人:连接机器人服务器失败
+2026-04-30 15:36:53.142   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-04-30 15:37:01.694   [WARN]   Websocket服务端  断开和ws服务器:ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B的连接。
+2026-04-30 15:37:48.572   [WARN]   Websocket客户端  2026/4/30 15:37:48 和示教器：192.168.146.128建立连接失败:AUBO机器人:连接机器人服务器失败
+2026-04-30 15:37:48.636   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-04-30 15:38:18.003   [WARN]   Websocket服务端  断开和ws服务器:ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B的连接。
+2026-04-30 16:52:08.793   [WARN]   Websocket客户端  2026/4/30 16:52:08 和示教器：192.168.0.136建立连接失败:AUBO机器人:连接机器人服务器失败
+2026-04-30 16:52:08.905   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-04-30 16:52:24.247   [WARN]   Websocket服务端  断开和ws服务器:ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B的连接。
+2026-04-30 16:53:56.355   [WARN]   Websocket客户端  2026/4/30 16:53:56 和示教器：192.168.0.136建立连接失败:AUBO机器人:连接机器人服务器失败
+2026-04-30 16:53:56.424   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-04-30 16:54:15.934   [WARN]   Websocket客户端  2026/4/30 16:54:15 和示教器：192.168.0.136建立连接失败:AUBO机器人:连接机器人服务器失败
+2026-04-30 16:54:16.029   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-04-30 16:55:17.818   [WARN]   Websocket服务端  断开和ws服务器:ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B的连接。
+2026-04-30 16:55:33.615   [WARN]   Websocket客户端  2026/4/30 16:55:33 和示教器：192.168.0.136建立连接失败:AUBO机器人:连接机器人服务器失败
+2026-04-30 16:55:33.674   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-04-30 16:55:37.434   [WARN]   Websocket服务端  断开和ws服务器:ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B的连接。
+2026-04-30 18:12:55.635   [INFO]   Websocket客户端  和示教器：192.168.0.6建立连接成功
+2026-04-30 18:12:55.804   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-04-30 18:13:54.902   [INFO]   Websocket客户端  场景：E009FF2C-1C2A-484F-845B-08529DCE154B，用户：3 运行。
+2026-04-30 18:22:26.819   [INFO]   Websocket客户端  和示教器：192.168.0.6建立连接成功
+2026-04-30 18:22:35.837   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。

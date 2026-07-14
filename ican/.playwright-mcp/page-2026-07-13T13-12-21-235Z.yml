@@ -1,0 +1,219 @@
+- generic [ref=f2e3]:
+  - generic [ref=f2e4]:
+    - generic [ref=f2e5]:
+      - img "logo" [ref=f2e6] [cursor=pointer]
+      - generic [ref=f2e7]:
+        - generic [ref=f2e8]: 
+        - generic [ref=f2e11] [cursor=pointer]: 
+        - generic [ref=f2e14] [cursor=pointer]: 
+        - generic [ref=f2e15] [cursor=pointer]: 
+      - generic [ref=f2e18]:
+        - generic [ref=f2e19]: 布局
+        - generic [ref=f2e20]: 建模
+        - generic [ref=f2e21]: 编程
+        - generic [ref=f2e22]: 通信
+    - generic [ref=f2e23]: test
+    - generic [ref=f2e24] [cursor=pointer]: 4.3.7
+  - generic [ref=f2e1137]:
+    - generic:
+      - generic: 添加服务器
+      - paragraph
+    - generic [ref=f2e1229] [cursor=pointer]:
+      - generic [ref=f2e1230]: 删除
+      - paragraph
+    - generic [ref=f2e1231] [cursor=pointer]:
+      - generic [ref=f2e1232]: 配对变量
+      - paragraph
+    - generic [ref=f2e1233] [cursor=pointer]:
+      - generic [ref=f2e1234]: 显示变量
+      - paragraph
+    - generic [ref=f2e1142] [cursor=pointer]:
+      - generic [ref=f2e1144]: 可配节点
+      - paragraph
+  - generic:
+    - generic:
+      - text: 
+      - generic [ref=f2e1145]:
+        - generic [ref=f2e1146]:
+          - button [ref=f2e1147] [cursor=pointer]
+          - generic [ref=f2e1148]:
+            - tablist [ref=f2e1152]:
+              - tab "服务器列表" [selected] [ref=f2e1153]
+              - tab "场景资源管理器" [ref=f2e1154]
+            - tabpanel "服务器列表" [ref=f2e1156]:
+              - generic [ref=f2e1157]: 通用服务器
+              - generic [ref=f2e1164] [cursor=pointer]: 自定义服务器
+              - tree [ref=f2e1171]:
+                - treeitem " OPC UA " [expanded] [ref=f2e1172]:
+                  - generic [ref=f2e1173] [cursor=pointer]:
+                    - generic [ref=f2e1174]: 
+                    - generic [ref=f2e1175]:
+                      - generic [ref=f2e1176]: OPC UA
+                      - button "" [ref=f2e1179]
+                  - group [ref=f2e1218]:
+                    - treeitem " 服务器" [expanded] [ref=f2e1219]:
+                      - generic [ref=f2e1220] [cursor=pointer]:
+                        - generic [ref=f2e1221]: 
+                        - generic [ref=f2e1223]:
+                          - checkbox
+                        - generic [ref=f2e1225]: 服务器
+                      - group
+        - list [ref=f2e1182]:
+          - listitem [ref=f2e1183] [cursor=pointer]
+          - listitem [ref=f2e1186] [cursor=pointer]:
+            - generic [ref=f2e1187]: 
+          - listitem [ref=f2e1188] [cursor=pointer]:
+            - generic [ref=f2e1189]: 
+          - listitem [ref=f2e1190] [cursor=pointer]:
+            - generic [ref=f2e1191]: 
+          - listitem [ref=f2e1192] [cursor=pointer]
+          - listitem [ref=f2e1195] [cursor=pointer]
+          - listitem [ref=f2e1198] [cursor=pointer]
+          - listitem [ref=f2e1201] [cursor=pointer]
+          - listitem [ref=f2e1204] [cursor=pointer]
+          - listitem [ref=f2e1207] [cursor=pointer]
+          - listitem [ref=f2e1210] [cursor=pointer]
+          - listitem [ref=f2e1213] [cursor=pointer]
+    - generic [ref=f2e1235]:
+      - button [ref=f2e1237] [cursor=pointer]
+      - generic [ref=f2e1238]:
+        - tablist [ref=f2e1239]:
+          - generic [ref=f2e1240]:
+            - tab [expanded] [ref=f2e1241]:
+              - button " 服务器属性" [ref=f2e1242] [cursor=pointer]:
+                - generic [ref=f2e1243]: 
+                - text: 服务器属性 
+            - tabpanel " 服务器属性" [ref=f2e1244]:
+              - generic [ref=f2e1245]:
+                - generic [ref=f2e1246]:
+                  - generic [ref=f2e1247]: 名称
+                  - textbox "请输入服务器的名称" [ref=f2e1249]: 服务器名称
+                - generic [ref=f2e1250]:
+                  - generic [ref=f2e1251]: 服务器地址
+                  - textbox "请输入服务器地址" [ref=f2e1253]
+                - generic [ref=f2e1254]:
+                  - generic [ref=f2e1255]: 验证方式
+                  - combobox [ref=f2e1257]:
+                    - option "无" [selected]
+                    - option "密码验证"
+                    - option "证书验证"
+                - button "测试连接" [ref=f2e1259] [cursor=pointer]
+          - generic [ref=f2e1261]:
+            - tab [expanded] [ref=f2e1262]:
+              - button " 服务器配置" [ref=f2e1263] [cursor=pointer]:
+                - generic [ref=f2e1264]: 
+                - text: 服务器配置 
+            - tabpanel " 服务器配置" [ref=f2e1265]:
+              - generic [ref=f2e1266]:
+                - generic [ref=f2e1267]:
+                  - generic [ref=f2e1268]: 浏览器超时
+                  - generic [ref=f2e1269]:
+                    - textbox [ref=f2e1270]: "0"
+                    - text: ms
+                - generic [ref=f2e1271]:
+                  - generic [ref=f2e1272]: 读取/写入超时
+                  - generic [ref=f2e1273]:
+                    - textbox [ref=f2e1274]: "0"
+                    - text: ms
+                - generic [ref=f2e1275]:
+                  - generic [ref=f2e1276]: 订阅超时
+                  - generic [ref=f2e1277]:
+                    - textbox [ref=f2e1278]: "0"
+                    - text: ms
+                - generic [ref=f2e1279]:
+                  - generic [ref=f2e1280]: 循环更新间隔
+                  - generic [ref=f2e1281]:
+                    - textbox [ref=f2e1282]: "0"
+                    - text: ms
+                - generic [ref=f2e1283]:
+                  - generic [ref=f2e1284]: 延时警报阈值
+                  - generic [ref=f2e1285]:
+                    - textbox [ref=f2e1286]: "0"
+                    - text: ms
+                - generic [ref=f2e1287]:
+                  - generic [ref=f2e1288]: 延时错误阈值
+                  - generic [ref=f2e1289]:
+                    - textbox [ref=f2e1290]: "0"
+                    - text: ms
+        - generic [ref=f2e1291]:
+          - button "应用" [ref=f2e1292] [cursor=pointer]
+          - button "取消" [ref=f2e1294] [cursor=pointer]
+  - generic [ref=f2e118]:
+    - generic [ref=f2e119]:
+      - generic [ref=f2e120]: "FPS:"
+      - generic [ref=f2e121]: "61"
+    - generic [ref=f2e122]:
+      - generic [ref=f2e123]: "mb:"
+      - generic [ref=f2e124]: "106"
+  - generic [ref=f2e128]:
+    - list [ref=f2e129]:
+      - listitem [ref=f2e130]: 场景
+      - listitem [ref=f2e131]:
+        - generic [ref=f2e132]: 
+      - listitem [ref=f2e133]:
+        - generic [ref=f2e134]: 
+      - listitem [ref=f2e135]:
+        - generic [ref=f2e136]: 
+      - listitem [ref=f2e137]:
+        - generic [ref=f2e138]: 
+      - listitem [ref=f2e139] [cursor=pointer]
+      - listitem [ref=f2e142] [cursor=pointer]
+    - list [ref=f2e145]:
+      - listitem [ref=f2e146]
+      - listitem [ref=f2e149]
+      - listitem [ref=f2e152]
+      - listitem [ref=f2e155]
+  - generic [ref=f2e158]:
+    - generic [ref=f2e159] [cursor=pointer]: 
+    - generic [ref=f2e160] [cursor=pointer]: 
+    - generic [ref=f2e161] [cursor=pointer]: 
+    - generic [ref=f2e162]:
+      - generic [ref=f2e163]: "00"
+      - generic [ref=f2e164]: :00
+      - generic [ref=f2e165]: :00
+    - generic [ref=f2e166]:
+      - generic [ref=f2e167]: "实时:"
+      - generic [ref=f2e170] [cursor=pointer]: x 1
+  - generic [ref=f2e1296]:
+    - generic [ref=f2e1297]:
+      - text: test（8702176E-DD15-447E-B2B4-338884358046）
+      - button [ref=f2e1298] [cursor=pointer]
+    - generic [ref=f2e1299]:
+      - generic [ref=f2e1300]:
+        - generic [ref=f2e1301]:
+          - text: "筛选:"
+          - generic [ref=f2e1302] [cursor=pointer]:
+            - generic [ref=f2e1303]:
+              - checkbox "当前组件" [disabled]
+            - generic [ref=f2e1305]: 当前组件
+        - radiogroup [ref=f2e1306]:
+          - radio "节点" [ref=f2e1307] [cursor=pointer]:
+            - radio [ref=f2e1310]
+          - radio "信号" [ref=f2e1312] [cursor=pointer]:
+            - radio [ref=f2e1315]
+          - radio "公共变量" [ref=f2e1317] [cursor=pointer]:
+            - radio [ref=f2e1320]
+        - button "重置条件" [ref=f2e1322] [cursor=pointer]
+      - generic [ref=f2e1323]:
+        - table [ref=f2e1325]:
+          - rowgroup [ref=f2e1335]:
+            - row [ref=f2e1336]:
+              - columnheader "组件名" [ref=f2e1337]
+              - columnheader "变量ID" [ref=f2e1339]
+              - columnheader "变量名称" [ref=f2e1341]
+              - columnheader "变量类型" [ref=f2e1343]
+              - columnheader "子类型" [ref=f2e1345]
+              - columnheader "数据类型" [ref=f2e1347]
+              - columnheader "反向写入" [ref=f2e1349]
+              - columnheader "建议通讯" [ref=f2e1351]
+        - generic [ref=f2e1353]:
+          - table:
+            - rowgroup
+          - generic [ref=f2e1354]: 暂无数据
+      - generic [ref=f2e1356]:
+        - generic [ref=f2e1357]:
+          - button "" [disabled] [ref=f2e1358]
+          - list [ref=f2e1360]:
+            - listitem [ref=f2e1361]: "1"
+          - button "" [disabled] [ref=f2e1362]
+        - button "导出表格" [ref=f2e1364] [cursor=pointer]

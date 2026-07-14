@@ -1,0 +1,4694 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OpcUaHelper</name>
+    </assembly>
+    <members>
+        <member name="T:OpcUaHelper.ClientUtils">
+            <summary>
+            Defines numerous re-useable utility functions.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.HandleException(System.String,System.Exception)">
+            <summary>
+            Handles an exception.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.GetAppIcon">
+            <summary>
+            Returns the application icon.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.GetAccessLevelDisplayText(System.Byte)">
+            <summary>
+            Gets the display text for the access level attribute.
+            </summary>
+            <param name="accessLevel">The access level.</param>
+            <returns>The access level formatted as a string.</returns>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.GetEventNotifierDisplayText(System.Byte)">
+            <summary>
+            Gets the display text for the event notifier attribute.
+            </summary>
+            <param name="eventNotifier">The event notifier.</param>
+            <returns>The event notifier formatted as a string.</returns>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.GetValueRankDisplayText(System.Int32)">
+            <summary>
+            Gets the display text for the value rank attribute.
+            </summary>
+            <param name="valueRank">The value rank.</param>
+            <returns>The value rank formatted as a string.</returns>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.GetAttributeDisplayText(Opc.Ua.Client.Session,System.UInt32,Opc.Ua.Variant)">
+            <summary>
+            Gets the display text for the specified attribute.
+            </summary>
+            <param name="session">The currently active session.</param>
+            <param name="attributeId">The id of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+            <returns>The attribute formatted as a string.</returns>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.Browse(Opc.Ua.Client.Session,Opc.Ua.BrowseDescriptionCollection,System.Boolean)">
+            <summary>
+            Browses the address space and returns the references found.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="nodesToBrowse">The set of browse operations to perform.</param>
+            <param name="throwOnError">if set to <c>true</c> a exception will be thrown on an error.</param>
+            <returns>
+            The references found. Null if an error occurred.
+            </returns>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.Browse(Opc.Ua.Client.Session,Opc.Ua.ViewDescription,Opc.Ua.BrowseDescriptionCollection,System.Boolean)">
+            <summary>
+            Browses the address space and returns the references found.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.Browse(Opc.Ua.Client.Session,Opc.Ua.BrowseDescription,System.Boolean)">
+            <summary>
+            Browses the address space and returns the references found.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="nodeToBrowse">The NodeId for the starting node.</param>
+            <param name="throwOnError">if set to <c>true</c> a exception will be thrown on an error.</param>
+            <returns>
+            The references found. Null if an error occurred.
+            </returns>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.Browse(Opc.Ua.Client.Session,Opc.Ua.ViewDescription,Opc.Ua.BrowseDescription,System.Boolean)">
+            <summary>
+            Browses the address space and returns the references found.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.BrowseSuperTypes(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Boolean)">
+            <summary>
+            Browses the address space and returns all of the supertypes of the specified type node.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="typeId">The NodeId for a type node in the address space.</param>
+            <param name="throwOnError">if set to <c>true</c> a exception will be thrown on an error.</param>
+            <returns>
+            The references found. Null if an error occurred.
+            </returns>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.TranslateBrowsePaths(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.NamespaceTable,System.String[])">
+            <summary>
+            Returns the node ids for a set of relative paths.
+            </summary>
+            <param name="session">An open session with the server to use.</param>
+            <param name="startNodeId">The starting node for the relative paths.</param>
+            <param name="namespacesUris">The namespace URIs referenced by the relative paths.</param>
+            <param name="relativePaths">The relative paths.</param>
+            <returns>A collection of local nodes.</returns>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.FindEventType(Opc.Ua.Client.MonitoredItem,Opc.Ua.EventFieldList)">
+            <summary>
+            Finds the type of the event for the notification.
+            </summary>
+            <param name="monitoredItem">The monitored item.</param>
+            <param name="notification">The notification.</param>
+            <returns>The NodeId of the EventType.</returns>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.ConstructEvent(Opc.Ua.Client.Session,Opc.Ua.Client.MonitoredItem,Opc.Ua.EventFieldList,System.Collections.Generic.Dictionary{Opc.Ua.NodeId,System.Type},System.Collections.Generic.Dictionary{Opc.Ua.NodeId,Opc.Ua.NodeId})">
+            <summary>
+            Constructs an event object from a notification.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="monitoredItem">The monitored item that produced the notification.</param>
+            <param name="notification">The notification.</param>
+            <param name="knownEventTypes">The known event types.</param>
+            <param name="eventTypeMappings">Mapping between event types and known event types.</param>
+            <returns>
+            The event object. Null if the notification is not a valid event type.
+            </returns>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.CollectInstanceDeclarationsForType(Opc.Ua.Client.Session,Opc.Ua.NodeId)">
+            <summary>
+            Collects the instance declarations for a type.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.CollectInstanceDeclarationsForType(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Boolean)">
+            <summary>
+            Collects the instance declarations for a type.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.CollectInstanceDeclarations(Opc.Ua.Client.Session,Opc.Ua.NodeId,OpcUaHelper.InstanceDeclaration,System.Collections.Generic.List{OpcUaHelper.InstanceDeclaration},System.Collections.Generic.IDictionary{System.String,OpcUaHelper.InstanceDeclaration})">
+            <summary>
+            Collects the fields for the instance node.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.FindTargetOfReference(Opc.Ua.Client.Session,System.Collections.Generic.List{Opc.Ua.NodeId},Opc.Ua.NodeId,System.Boolean)">
+            <summary>
+            Finds the targets for the specified reference.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.UpdateInstanceDescriptions(Opc.Ua.Client.Session,System.Collections.Generic.List{OpcUaHelper.InstanceDeclaration},System.Boolean)">
+            <summary>
+            Finds the targets for the specified reference.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.CollectFieldsForType(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.SimpleAttributeOperandCollection,System.Collections.Generic.List{Opc.Ua.NodeId})">
+            <summary>
+            Collects the fields for the type.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="typeId">The type id.</param>
+            <param name="fields">The fields.</param>
+            <param name="fieldNodeIds">The node id for the declaration of the field.</param>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.CollectFieldsForInstance(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.SimpleAttributeOperandCollection,System.Collections.Generic.List{Opc.Ua.NodeId})">
+            <summary>
+            Collects the fields for the instance.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="instanceId">The instance id.</param>
+            <param name="fields">The fields.</param>
+            <param name="fieldNodeIds">The node id for the declaration of the field.</param>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.CollectFields(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.QualifiedNameCollection,Opc.Ua.SimpleAttributeOperandCollection,System.Collections.Generic.List{Opc.Ua.NodeId},System.Collections.Generic.Dictionary{Opc.Ua.NodeId,Opc.Ua.QualifiedNameCollection})">
+            <summary>
+            Collects the fields for the instance node.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="nodeId">The node id.</param>
+            <param name="parentPath">The parent path.</param>
+            <param name="fields">The event fields.</param>
+            <param name="fieldNodeIds">The node id for the declaration of the field.</param>
+            <param name="foundNodes">The table of found nodes.</param>
+        </member>
+        <member name="M:OpcUaHelper.ClientUtils.ContainsPath(Opc.Ua.SimpleAttributeOperandCollection,Opc.Ua.QualifiedNameCollection)">
+            <summary>
+            Determines whether the specified select clause contains the browse path.
+            </summary>
+            <param name="selectClause">The select clause.</param>
+            <param name="browsePath">The browse path.</param>
+            <returns>
+            	<c>true</c> if the specified select clause contains path; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.ABBController.NckTxData">
+            <summary>
+            nck 发送端数据模型
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.ABBController.NckRxData">
+            <summary>
+            nck 接收端数据模型
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.ABBController.NckRxData.robotData">
+            <summary>
+            单个机器人
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.ABBController.RobotData">
+            <summary>
+            机器人数据
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.ABBController.RobotData.jointValue">
+            <summary>
+            弧度制
+            除以100000然后转角度
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.ABBController.RobotData.jointAngleValue">
+            <summary>
+            角度值
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.ABBController.NCKHelper">
+            <summary>
+            NCK码既16位的网络控制码
+            工具类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ABBController.NCKHelper.CRC16(System.Byte[],System.Int32)">
+            <summary>
+            上电
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ABBController.NCKHelper.SetRobotMode(System.Byte[],System.Int32,System.Boolean)">
+            <summary>
+            设置机器人的模式
+            </summary>
+            <param name="txData"></param>
+            <param name="mode"></param>
+            <param name="powerOn"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ABBController.NCKHelper.Byte2NckData(System.Byte[],System.Int32)">
+            <summary>
+            byte数据转换成nck接收端数据
+            </summary>
+            <param name="nckRxBuff"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.ABBController.RobotMode">
+            <summary>
+            机器人模式
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.ABBController.RobotMode.Manual">
+            <summary>
+            手动模式
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.ABBController.RobotMode.FullManual">
+            <summary>
+            全速手动模式
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.ABBController.RobotMode.Automatic">
+            <summary>
+            自动模式
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.AppConfig.UpdateConnectionConfig(System.String,System.String,System.String)">
+            <summary>
+            更新连接字符串
+            </summary>
+            <param name="newConName">连接字符串名称</param>
+            <param name="newConString">连接字符串内容</param>
+            <param name="newProviderName">数据提供程序名称</param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.AppConfig.GetAppCofig(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="conName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.AppConfig.UpdateAppConfig(System.String,System.String)">
+            <summary>
+            在＊.exe.config文件中appSettings配置节增加一对键、值对
+            </summary>
+            <param name="newKey"></param>
+            <param name="newValue"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.AUBO.AuboApi">
+            <summary>
+            aubo机器人 api
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.ClientBehavior">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.ClientBehavior.Instances">
+            <summary>
+            静态字典来跟踪所有Echo实例
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.Extension.ClientBehavior.OnRunEvent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.ClientBehavior.OnRunHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ClientBehavior.OnMessage(WebSocketSharp.MessageEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ClientBehavior.SendData(System.String)">
+            <summary>
+            发送数据
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ClientBehavior.OnOpen">
+            <summary>
+            连接事件
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ClientBehavior.OnClose(WebSocketSharp.CloseEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ClientBehavior.OnError(WebSocketSharp.ErrorEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.AUBO.AuboHelper">
+            <summary>
+            aubo机器人
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.AUBO.AuboHelper.#ctor(OpcUaHelper.Extension.DTO.RCSession)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="session"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.AUBO.AuboHelper.Connect">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.AUBO.AuboHelper.Disconnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.AUBO.AuboHelper.Th_GetRobotData">
+            <summary>
+            获得机器人数据线程
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.JAKA.JakaRobot">
+            <summary>
+            jaka机器人通讯帮助类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.JAKA.JakaRobot.#ctor(OpcUaHelper.Extension.DTO.RCSession)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="session"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.JAKA.JakaRobot.Disconnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.JAKA.JakaRobot.Connect">
+            <summary>
+            连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.JAKA.JakaRobot.StartPolling(System.Threading.CancellationToken)">
+            <summary>
+            开始轮询数据
+            </summary>
+            <param name="token"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.JAKA.JakaRobot.PollLoop(System.Threading.CancellationToken)">
+            <summary>
+            循环轮询数据
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.JAKA.JakaRobot.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.RobotControllerBase">
+            <summary>
+            机器人控制器基类
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.RobotControllerBase._session">
+            <summary>
+            会话信息
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.RobotControllerBase.disposed">
+            <summary>
+            是否已释放资源
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.RobotControllerBase.getDataInterval">
+            <summary>
+            获得数据间隔
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.RobotControllerBase.OnDataReceived">
+            <summary>
+            接受数据事件
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.RobotControllerBase.OnConnected">
+            <summary>
+            连接成功事件
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.RobotControllerBase.OnDisconnected">
+            <summary>
+            断开连接事件
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.RobotControllerBase.OnErrorOccurred">
+            <summary>
+            错误发生事件
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.RobotControllerBase._receiveDataThread">
+            <summary>
+            线程:接收Udp数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.RobotControllerBase.#ctor(OpcUaHelper.Extension.DTO.RCSession)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="session"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.RobotControllerBase.Connect">
+            <summary>
+            连接
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.RobotControllerBase.Disconnect">
+            <summary>
+            断开连接
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.RobotControllerBase.Send(System.Byte[])">
+            <summary>
+            发送数据
+            </summary>
+            <param name="sendBytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.RobotControllerBase.IsNetworkAvailable(System.String)">
+            <summary>
+            判断网络是否连接
+            </summary>
+            <param name="host"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.RobotControllerBase.StartPolling(System.Threading.CancellationToken)">
+            <summary>
+            开始轮询数据
+            </summary>
+            <param name="token"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.RobotControllerBase.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.ReceiveDataEventHandler">
+            <summary>
+            处理接收数据委托
+            </summary>
+            <param name="receiveBytes">接收到的字节数组</param>
+            <param name="userData">用户自定义数据</param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.ConnectedEventHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.DisconnectedEventHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.ErrorOccurredEventHandler">
+            <summary>
+            错误发生
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.TcpHelper">
+            <summary>
+            tcp通讯工具类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.TcpHelper.#ctor(OpcUaHelper.Extension.DTO.RCSession)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.TcpHelper.Connect">
+            <summary>
+            启动
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.TcpHelper.SendDataLoop">
+            <summary>
+            循环发送数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.TcpHelper.Disconnect">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.TcpHelper.HandleDisconnect">
+            <summary>
+            处理掉线
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.TcpHelper.SetIOVariable(System.Collections.Generic.List{OpcUaHelper.Extension.DTO.IOItem})">
+            <summary>
+            设置io信号
+            </summary>
+            <param name="items"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.TcpHelper.Send(System.Byte[])">
+            <summary>
+            发送数据
+            </summary>
+            <param name="sendBytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.TcpHelper.AddWriteSignal(System.Collections.Generic.List{OpcUaHelper.Extension.RCWriteData})">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.TcpHelper.ReceiveLoop">
+            <summary>
+            接收数据响应事件方法
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.TcpHelper.IsConnectionValid">
+            <summary>
+            检查连接是否有效
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.TcpHelper.EnqueueData(System.Byte[])">
+            <summary>
+            添加到发送队列
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.RCReqParam">
+            <summary>
+            机器人请求数据参数
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.RCReqParam.req">
+            <summary>
+            请求类型
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.RCReqParam.value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.ClientHelper">
+            <summary>
+            UDP客户端工具类
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.ClientHelper.m_ReceiveClient">
+            <summary>
+            接收端服务
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.ClientHelper.m_SendClient">
+            <summary>
+            发送端服务
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.ClientHelper.m_RemoteHost">
+            <summary>
+            远端网络端点
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.ClientHelper.m_LocalHost">
+            <summary>
+            本地网络端点
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.ClientHelper.m_ReceiveTimeOut">
+            <summary>
+            接收超时限制
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.Comm.ClientHelper.ReceiveTimeOut">
+            <summary>
+            获取或设置接收超时限制
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.ClientHelper.m_SendTimeOut">
+            <summary>
+            发送超时限制
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.Comm.ClientHelper.SendTimeOut">
+            <summary>
+            获取或设置发送超时限制
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.ClientHelper.m_LocalPort">
+            <summary>
+            本地端口
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.Comm.ClientHelper.LocalPort">
+            <summary>
+            获取或设置本地端口
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.ClientHelper.m_LocalIpAddress">
+            <summary>
+            本地ip地址
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.Comm.ClientHelper.LocalIpAddress">
+            <summary>
+            获取或设置本地IP地址
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.ClientHelper.m_RemoteIpAddress">
+            <summary>
+            远端IP地址
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.Comm.ClientHelper.RemoteIpAddress">
+            <summary>
+            获取或设置远端IP地址
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.ClientHelper.m_RemotePort">
+            <summary>
+            远端端口
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.Comm.ClientHelper.RemotePort">
+            <summary>
+            获取或设置远端端口
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.ClientHelper.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>
+            构造新的客户端工具类
+            </summary>
+            <param name="localPort">本地监听端口</param>
+            <param name="remoteIP">远端IP地址</param>
+            <param name="remotePort">远端开放端口</param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.ClientHelper.#ctor(System.String,System.Int32,System.String,System.Int32)">
+            <summary>
+            构造新的客户端工具类
+            </summary>
+            <param name="localIP"></param>
+            <param name="localPort">本地监听端口</param>
+            <param name="remoteIP">远端IP地址</param>
+            <param name="remotePort">远端开放端口</param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.ClientHelper.Start">
+            <summary>
+            启动socket客户端
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.ClientHelper.BindLocalPort(System.Int32)">
+            <summary>
+            绑定本地端口
+            </summary>
+            <param name="port">本地端口号</param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.ClientHelper.BindLocalPort(System.String,System.Int32)">
+            <summary>
+            绑定本地端口
+            </summary>
+            <param name="ip"></param>
+            <param name="port">本地端口号</param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.ClientHelper.Receive(System.Byte[]@)">
+            <summary>
+            接受远端数据
+            </summary>
+            <param name="arrData">接收到的字节数组</param>
+            <returns>是否有接收到数据</returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.ClientHelper.ReceiveNckData(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="rxData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.ClientHelper.Send(System.Byte[])">
+            <summary>
+            向远端发送字节数组
+            </summary>
+            <param name="arrData">发送的字节数组</param>
+            <returns>是否发送成功</returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.ClientHelper.SendTo(System.Byte[],System.Int32)">
+            <summary>
+            向远端发送字节数组
+            </summary>
+            <param name="arrData">发送的字节数组</param>
+            <returns>是否发送成功</returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.ClientHelper.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.UDPHelper">
+            <summary>
+            UDP通讯工具类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.UDPHelper.#ctor(OpcUaHelper.Extension.DTO.RCSession)">
+            <summary>
+            构造新的UDP通讯工具类
+            </summary>
+            <param name="session"></param>
+        </member>
+        <member name="F:OpcUaHelper.Extension.Comm.UDPHelper.m_Client">
+            <summary>
+            客户端工具类
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.Comm.UDPHelper.LocalPort">
+            <summary>
+            本地端口号
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.Comm.UDPHelper.RemoteIpAddress">
+            <summary>
+            获取或设置远端IP地址
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.Comm.UDPHelper.RemotePort">
+            <summary>
+            获取或设置远端端口号
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.Comm.UDPHelper.ReceiveTimeOut">
+            <summary>
+            获取或设置接收数据超时时间
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.Comm.UDPHelper.SendTimeOut">
+            <summary>
+            获取或设置发送数据超时时间
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.UDPHelper.Connect">
+            <summary>
+            启动通讯
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.UDPHelper.Disconnect">
+            <summary>
+            停止通讯
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.UDPHelper.Send(System.Byte[])">
+            <summary>
+            向远端发送数据
+            </summary>
+            <param name="sendBytes">发送的字节数组</param>
+            <returns>是否发送成功</returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Comm.UDPHelper_RC">
+            <summary>
+            udp工具类子类，用于处理和abb控制器的以通讯
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.UDPHelper_RC.#ctor(OpcUaHelper.Extension.DTO.RCSession)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="session"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.UDPHelper_RC.Connect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.UDPHelper_RC.SetModeAPowerOn(System.Int32,System.Boolean)">
+            <summary>
+            设置模式和上电
+            </summary>
+            <param name="mode"></param>
+            <param name="powerOn"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Comm.UDPHelper_RC.ReceiveHandler">
+            <summary>
+            接收数据处理
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DataTransceiver">
+            <summary>
+            数据收发器
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DataTransceiver.PrintRSData">
+            <summary>
+            打印收发数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.StartSendDataThread">
+            <summary>
+            开启发送数据现场
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.ConnectWSServer(System.String,System.Int32,OpcUaHelper.Extension.MyDataSource.DataSource_Opc)">
+            <summary>
+            连接ws
+            </summary>
+            <param name="url"></param>
+            <param name="interval"></param>
+            <param name="opcUtil"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.DisconnectWSServer">
+            <summary>
+            断开连接websocket服务器
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.SendData2Sever(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            将数据发送到ws服务端
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.OnStop(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.OnReset(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.OnRun(System.String)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.StartWSServer(System.String,System.Int32,System.Int32,OpcUaHelper.Extension.MyDataSource.DataSource_Opc)">
+            <summary>
+            开启ws服务器
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.ClientConnectedHandler(OpcUaHelper.Extension.CommonEventNode)">
+            <summary>
+            有客户端连接上事件处理函数
+            </summary>
+            <param name="baseEvent"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.ClientDisconnectedHandler(OpcUaHelper.Extension.CommonEventNode)">
+            <summary>
+            有客户端断开连接事件处理函数
+            </summary>
+            <param name="baseEvent"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.DispatchData2Client(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            将数据分发到客户端
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.StopWSServer">
+            <summary>
+            关闭ws服务器
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.Stop">
+            <summary>
+            停止服务
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.SendData">
+            <summary>
+            发送数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.AddData2Jobject(Newtonsoft.Json.Linq.JObject,System.String,OpcUaHelper.Extension.SignalData)">
+            <summary>
+            将缓存数据添加到jobject
+            </summary>
+            <param name="data"></param>
+            <param name="dbiNodeUuid"></param>
+            <param name="signalData"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTransceiver.GetSceneId(System.String)">
+            <summary>
+            获得场景id
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DataWarehouse">
+            <summary>
+            数据仓库
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DataWarehouse.OpcSubDict">
+            <summary>
+            opc订阅字典
+            key：dbi中变量uuid
+            value
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DataWarehouse.DBINodes">
+            <summary>
+            dbi所有节点
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DataWarehouse.CacheDataDict">
+            <summary>
+            缓存数据
+            key:dbi节点uuid
+            value:信号值
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DataWarehouse.OpcCacheDataDict">
+            <summary>
+            opc缓存数据   每次发送完数据清空
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DataWarehouse.UpdateKeys">
+            <summary>
+            更新数据的键
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataWarehouse.GetDataValue(Opc.Ua.DataValue,Newtonsoft.Json.Linq.JObject,System.String)">
+            <summary>
+            根据类型获得值
+            </summary>
+            <param name="dv"></param>
+            <param name="data"></param>
+            <param name="dbiNodeId"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataWarehouse.SetRobotJoints(System.String,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.SignalData">
+            <summary>
+            信号数据
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.SignalData.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.SignalData.DataValue">
+            <summary>
+            数据值
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.SignalData.HasSent">
+            <summary>
+            是否发送
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.DBINode">
+            <summary>
+            DBI节点 简化
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.DBINode.ComponentName">
+            <summary>
+            组件名称
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.DBINode.NodeName">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.DBINode.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.DBINode.NodeUUID">
+            <summary>
+            节点UUID
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.DBINode_FullVariable">
+            <summary>
+            DBI节点_全部数据 
+            用于解析
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.DBINode_FullVariable.subTag">
+            <summary>
+            建议通讯
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.DBIQueryNodeResponse">
+            <summary>
+            dbi查询节点返回
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.DBIQueryNodeResponse.code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.DBIQueryNodeResponse.message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.DBIQueryNodeResponse.data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DTO.DBIQueryNodeResponse.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.KukaConfig">
+            <summary>
+            kuka.officelite 配置文件
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.KukaConfig.KukaSessions">
+            <summary>
+            机器人控制器会话
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DTO.KukaConfig.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.KukaSession">
+            <summary>
+            kuka.officelite会话
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.KukaSession.SessionId">
+            <summary>
+            会话唯一标识id
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.KukaSession.ControllerIP">
+            <summary>
+            控制器ip
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.KukaSession.ControllerPort">
+            <summary>
+            控制器端口
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.KukaSession.RobotName">
+            <summary>
+            机器人
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.KukaSession.Uuid_Axis1">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.KukaSession.Uuid_Axis2">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.KukaSession.Uuid_Axis3">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.KukaSession.Uuid_Axis4">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.KukaSession.Uuid_Axis5">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.KukaSession.Uuid_Axis6">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.OpcConfig">
+            <summary>
+            opc 配置文件
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcConfig.OpcSessions">
+            <summary>
+            opc会话
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DTO.OpcConfig.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.OpcSession">
+            <summary>
+            opc 会话
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSession.SessionId">
+            <summary>
+            会话id
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSession.Url">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSession.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSession.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSession.SceneId">
+            <summary>
+            fdsim 场景ID
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSession.Authentication">
+            <summary>
+            认证方式
+            Anonymous:匿名
+            Username
+            Certificate:证书
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSession.OpcSignalPairs">
+            <summary>
+            信号配对
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DTO.OpcSession.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.OpcSignalPair">
+            <summary>
+            opc 信号配对
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSignalPair.SessionId">
+            <summary>
+            会话id
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSignalPair.OpcNodeId">
+            <summary>
+            opc节点id
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSignalPair.DbiComponentName">
+            <summary>
+            dbi组件名称
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSignalPair.DbiNodeName">
+            <summary>
+            dbi信号节点名称
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSignalPair.DbiNodeUuid">
+            <summary>
+            dbi节点uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSignalPair.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcSignalPair.AccessLevel">
+            <summary>
+            访问级别
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.OpcVariable">
+            <summary>
+            opc变量
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcVariable.OpcSessionID">
+            <summary>
+            opc会话id
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcVariable.OpcNodeID">
+            <summary>
+            opc节点id
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.OpcNodeData">
+            <summary>
+            opc节点数据
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcNodeData.OpcNodeId">
+            <summary>
+            节点 id
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.OpcNodeData.Data">
+            <summary>
+            节点数据
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.RCConfig">
+            <summary>
+            机器人示教器配置
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCConfig.RCSessions">
+            <summary>
+            机器人控制器会话
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DTO.RCConfig.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.RCSession">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.SessionId">
+            <summary>
+            会话唯一标识id
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.ControllerIP">
+            <summary>
+            控制器ip
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.ControllerPort">
+            <summary>
+            控制器端口
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.LocalIP">
+            <summary>
+            本地ip
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.LocalPort">
+            <summary>
+            本地端口
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.RobotName">
+            <summary>
+            机器人名称
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.Mode">
+            <summary>
+            运行模式   0：手动，1：全速手动  2：自动
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.PowerOn">
+            <summary>
+            上电
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.Uuid_Axis1">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.Uuid_Axis2">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.Uuid_Axis3">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.Uuid_Axis4">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.Uuid_Axis5">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.Uuid_Axis6">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCSession.IOs">
+            <summary>
+            输入输出信号集合
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DTO.RCSession.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.IOItem">
+            <summary>
+            机器人控制器IO
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.IOItem.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.IOItem.SignalType">
+            <summary>
+            信号类型
+            Input/Output
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.IOItem.DataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.IOItem.BindSignalUuid">
+            <summary>
+            绑定信号uuid
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.AddIOItemCompleteParam">
+            <summary>
+            添加io item完成参数
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.AddIOItemCompleteParam.Result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.AddIOItemCompleteParam.Item">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.RCData">
+            <summary>
+            机器人示教器数据
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCData.DataType">
+            <summary>
+            数据类型   Joint/IO
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RCData.Value">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.RSConfig">
+            <summary>
+            robotStudio配置
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RSConfig.RSSessions">
+            <summary>
+            机器人控制器会话
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DTO.RSConfig.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.RSSession">
+            <summary>
+            robotStudio会话
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RSSession.SessionId">
+            <summary>
+            会话唯一标识id
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RSSession.RSControllerName">
+            <summary>
+            控制器ip
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RSSession.DBIRobotName">
+            <summary>
+            控制器端口
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RSSession.Uuid_Axis1">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RSSession.Uuid_Axis2">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RSSession.Uuid_Axis3">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RSSession.Uuid_Axis4">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RSSession.Uuid_Axis5">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.RSSession.Uuid_Axis6">
+            <summary>
+            轴1Uuid
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.SavedEndpoint">
+            <summary>
+            保存的endpointDescription
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DTO.SavedEndpoint.#ctor(Opc.Ua.EndpointDescription)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="endpoint"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DTO.SavedEndpoint.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DTO.SavedEndpoint.ToString">
+            <summary>
+            将epd转成字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DTO.SetupConfig">
+            <summary>
+            软件设置配置文件
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.WebSocketType">
+            <summary>
+            默认类型  服务端  客户端
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.OpcEnable">
+            <summary>
+            激活opc服务
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.RobotControllerEnable">
+            <summary>
+            激活机器人示教器服务
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.RobotStudioEnable">
+            <summary>
+            激活robotStudio服务
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.KukaEnable">
+            <summary>
+            激活kuka服务
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.QueryDbiNodeUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.WebsocketUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.WSServerDefaultPort">
+            <summary>
+            websocket服务端默认端口
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.DbiSceneId">
+            <summary>
+            dbi场景id
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.SendDataInterval">
+            <summary>
+            发送数据间隔
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.GetRcDataInterval">
+            <summary>
+            获得示教器数据间隔
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.GetAbbVrcDataInterval">
+            <summary>
+            获得abb虚拟示教器间隔
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.GetKukaVrcDataInterval">
+            <summary>
+            获得kuka虚拟示教器间隔
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.LogStorageDays">
+            <summary>
+            日志存储天数
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.RCProtocol">
+            <summary>
+            机器人示教器通讯协议
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.DTO.SetupConfig.PrintRSData">
+            <summary>
+            打印收发数据
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.MyDataSource.DataSourceBase">
+            <summary>
+            数据源基类
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.MyDataSource.DataSourceBase.robotdata">
+            <summary>
+            存储机器人数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSourceBase.#ctor">
+            <summary>
+            构造方法
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSourceBase.SetData(System.String,System.Single)">
+            <summary>
+            设置数据
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSourceBase.SetData(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.MyDataSource.DataSource_Kuka">
+            <summary>
+            数据源 kuka虚拟示教器
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.MyDataSource.DataSource_Kuka.DisconnectHandler">
+            <summary>
+            断开连接委托
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="E:OpcUaHelper.Extension.MyDataSource.DataSource_Kuka.GetDataEvent">
+            <summary>
+            获得数据事件
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.Extension.MyDataSource.DataSource_Kuka.DisconnectEvent">
+            <summary>
+            断开连接事件
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Kuka.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Kuka.StartGetData(OpcUaHelper.Extension.DTO.KukaConfig,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="m_kukaConfig"></param>
+            <param name="interval"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Kuka.StopGetData">
+            <summary>
+            停止获取数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Kuka.PauseData(System.String)">
+            <summary>
+            解析数据
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.MyDataSource.DataSource_Opc">
+            <summary>
+            数据源 opc
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.MyDataSource.DataSource_Opc.PrintRSData">
+            <summary>
+            打印收发数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Opc.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Opc.AddAllSubscription(OpcUaHelper.Extension.DTO.OpcConfig)">
+             <summary>
+            订阅opc数据
+             </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Opc.Disconnect">
+            <summary>
+            断开连接
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Opc.GetAllData(Newtonsoft.Json.Linq.JObject@)">
+            <summary>
+            获取订阅的全部数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Opc.GetOpcClient(System.String)">
+            <summary>
+            获得opc client
+            </summary>
+            <param name="sessionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Opc.AddSubscription(OpcUaHelper.Extension.DTO.OpcSession)">
+            <summary>
+            订阅单个会话数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Opc.DBISubCallback(System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs)">
+            <summary>
+            收到数据回调
+            </summary>
+            <param name="sessionId"></param>
+            <param name="monitoredItem"></param>
+            <param name="eventArgs"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_Opc.GetSignalType(Opc.Ua.BuiltInType)">
+            <summary>
+            获得数据类型
+            </summary>
+            <param name="builtInType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.MyDataSource.DataSource_RC">
+            <summary>
+            数据源 ：机器人控制器
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.Extension.MyDataSource.DataSource_RC.OnReceiveData">
+            <summary>
+            获得数据事件
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.Extension.MyDataSource.DataSource_RC.OnConnected">
+            <summary>
+            断开连接
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.Extension.MyDataSource.DataSource_RC.OnDisconnected">
+            <summary>
+            断开连接
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RC.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RC.GetClient(System.String)">
+             <summary>
+            获得client
+             </summary>
+             <param name="sessionId"></param>
+             <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RC.OnDisconnectedHandler(System.String,System.String)">
+            <summary>
+            断开连接响应
+            </summary>
+            <param name="sessionId"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RC.SetData(System.String,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RC.ConnectAsync(System.String,OpcUaHelper.Extension.DTO.RCConfig,System.Int32)">
+            <summary>
+            异步连接
+            </summary>
+            <param name="commProtocol"></param>
+            <param name="rcConfig"></param>
+            <param name="interval"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RC.StopAllClient">
+            <summary>
+            关闭所有udp客户端
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.MyDataSource.DataSource_RS">
+            <summary>
+            数据源：RobotStudio
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.Extension.MyDataSource.DataSource_RS.GetDataEvent">
+            <summary>
+            获得数据事件
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.MyDataSource.DataSource_RS.m_controllerInfos">
+            <summary>
+            控制器
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RS.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RS.LogonABBVrc(OpcUaHelper.Extension.DTO.RSConfig)">
+            <summary>
+            RobotStudio 登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RS.StartGetData(System.Int32)">
+            <summary>
+            开始获得数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RS.StopGetData">
+            <summary>
+            停止获取数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RS.GetData">
+            <summary>
+            获得数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RS.ScanController">
+            <summary>
+            扫描控制器
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.MyDataSource.DataSource_RS.IsConnected(ABB.Robotics.Controllers.Controller)">
+            <summary>
+            判断是否连接
+            </summary>
+            <param name="controller"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DataTypeConversionHelper">
+            <summary>
+            数据转换帮助类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTypeConversionHelper.String2ByteArray(System.String)">
+            <summary>
+            字符串转byte数组
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DataTypeConversionHelper.ByteArray2String(System.Byte[])">
+            <summary>
+            byte数组转字符串
+            </summary>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Dgv">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Dgv.setColumnsWidth(System.Windows.Forms.DataGridView,System.Int32[])">
+            <summary>
+            按百分比设置datagridview各列的宽度
+            </summary>
+            <param name="iArray">rowheader+ 各行比例</param>
+            <returns>1.正常，0错误</returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.ResponseData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.CommonEventNode">
+            <summary>
+            通用事件节点
+            自定义事件派生此类自定义相应的字段和构造函数即可
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.CommonEventNode.Value">
+            <summary>
+            事件参数
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.CommonEventNode.EventName">
+            <summary>
+            事件端口
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.CommonEventNode.#ctor(System.String)">
+            <summary>
+            构造事件节点
+            </summary>
+            <param name="eventName">事件端口</param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.CommonEventNode.#ctor(System.String,System.Object)">
+            <summary>
+            构造事件节点
+            </summary>
+            <param name="eventName">事件端口</param>
+            <param name="value">传递的值</param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DBIEvent">
+            <summary>
+            事件
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DBIEvent.WSConnected">
+            <summary>
+            WS连接
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DBIEvent.WSDisonnected">
+            <summary>
+            WS断开连接
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DBIEvent.DataChanged">
+            <summary>
+            信号改变
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DBIEvent.ReverseCtrl">
+            <summary>
+            反向控制
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DBIEvent.OpcSessionChanged">
+            <summary>
+            opc会话变化事件
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DBIEvent.HasClientConnected">
+            <summary>
+            有客户端连接
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DBIEvent.HasClientDisconnected">
+            <summary>
+            有客户端断开连接
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.DBIEvent.AddRobotControllerIOItemComplete">
+            <summary>
+            添加机器人示教器io item完成
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.DBIComponent">
+            <summary>
+            dbi组件  
+            用来判断组件是否为机器人
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.DBIComponent.IsRobot">
+            <summary>
+            判断组件是否为机器人
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.JointData">
+            <summary>
+            机器人关节轴数据
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.JointData.UUID">
+            <summary>
+            DBI场景中机器人轴UUID
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.JointData.AxisValue">
+            <summary>
+            数据源机器人关节角度值
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.WinscpConfig">
+            <summary>
+            winscp 配置
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.WinscpConfig.Protocol">
+            <summary>
+            协议
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.WinscpConfig.HostName">
+            <summary>
+            主机名
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.WinscpConfig.Port">
+            <summary>
+            端口号
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.WinscpConfig.Username">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.WinscpConfig.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.RCWriteData">
+            <summary>
+            机器人示教器反向写入数据
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.RCWriteData.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.RCWriteData.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.ErrorAccess">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.ErrorAccess.Result">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.ErrorAccess.Result.Succeed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.ErrorAccess.Result.ERROR">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.ErrorAccess.Result.WARN">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.ErrorAccess.Result.INFO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ErrorAccess.CreateErrorMsg(System.String,OpcUaHelper.Extension.ErrorAccess.Result,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="eventName"></param>
+            <param name="result"></param>
+            <param name="details"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ErrorAccess.CreateMsg(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="eventName"></param>
+            <param name="details"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ErrorAccess.CreateThreadExceptionLog(System.Threading.ThreadExceptionEventArgs)">
+            <summary>
+            线程异常
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.ErrorAccess.CreateUnhandledExceptionLog(System.UnhandledExceptionEventArgs)">
+            <summary>
+            主界面异常
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.EventUtil">
+            <summary>
+            事件工具类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.EventUtil.AddListener(System.String,OpcUaHelper.Extension.Callback)">
+            <summary>
+            添加事件监听
+            </summary>
+            <param name="eventName">端口</param>
+            <param name="callback">回调函数</param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.EventUtil.RemoveListener(System.String,OpcUaHelper.Extension.Callback)">
+            <summary>
+            移除事件监听
+            </summary>
+             <param name="eventName">端口</param>
+            <param name="callback">回调函数</param>
+            <returns>结果</returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.EventUtil.DispatchEvent(System.String)">
+            <summary>
+            分发事件监听
+            </summary>
+            <param name="eventName">端口</param>
+            <returns>结果</returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.EventUtil.DispatchEvent(System.String,System.Object)">
+            <summary>
+            分发事件监听
+            </summary>
+            <param name="eventName">端口</param>
+            <param name="value">传递值</param>
+            <returns>结果</returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Callback">
+            <summary>
+            回掉函数委托
+            </summary>
+            <param name="baseEvent">事件节点</param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Utils.ExcelHelper">
+            <summary>
+            表格帮助类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.ExcelHelper.ParseOpcConfig(System.String,OpcUaHelper.Extension.DTO.OpcConfig@)">
+            <summary>
+            解析opc配置文件
+            </summary>
+            <param name="filePath"></param>
+            <param name="opcConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.ExcelHelper.AddOpcSession(System.String,OpcUaHelper.Extension.DTO.OpcSession)">
+            <summary>
+            添加opc会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="session"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.ExcelHelper.RemoveOpcSession(System.String,System.String)">
+            <summary>
+            删除opc会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="sessionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.ExcelHelper.RemoveAllOpcSession(System.String,OpcUaHelper.Extension.DTO.OpcConfig)">
+            <summary>
+            移除所有的opc会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.ExcelHelper.UpdateOpcSession(System.String,OpcUaHelper.Extension.DTO.OpcSession)">
+            <summary>
+            更新opc会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.ExcelHelper.RemoveOpcSubscription(System.String,System.String)">
+            <summary>
+            移除opc订阅
+            </summary>
+            <param name="filePath"></param>
+            <param name="fdsimNodeId"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.ExcelHelper.RemoveSessionAllSubscription(System.String,System.String)">
+            <summary>
+            移除会话所有配对
+            </summary>
+            <param name="filePath"></param>
+            <param name="sessionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.ExcelHelper.AddOpcSubscription(System.String,System.String,OpcUaHelper.Extension.DTO.OpcSignalPair)">
+            <summary>
+            新建opc订阅配对
+            </summary>
+            <param name="filePath"></param>
+            <param name="sessionId"></param>
+            <param name="pair"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.ExcelHelper.UpdateOpcSubscription(System.String,System.String,System.String,OpcUaHelper.Extension.DTO.OpcSignalPair)">
+            <summary>
+            更新opc订阅配对
+            </summary>
+            <param name="filePath"></param>
+            <param name="fdsimNodeId"></param>
+            <param name="sessionId"></param>
+            <param name="pair"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Utils.ThreadHelper">
+            <summary>
+            线程帮助类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.ThreadHelper.KillThread(System.Threading.Thread)">
+            <summary>
+            释放线程
+            </summary>
+            <param name="th"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Utils.XJLogUtil">
+            <summary>
+            优化后的日志工具
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.Extension.Utils.XJLogUtil.OnLogMessage">
+            <summary>
+            值变化事件
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XJLogUtil.Init(System.String)">
+            <summary>
+            初始化
+            </summary>
+            <param name="logDir"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XJLogUtil.Shutdown">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XJLogUtil.Log(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XJLogUtil.Warning(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XJLogUtil.Error(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Utils.OnLogMessage">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.Utils.XmlPauser">
+            <summary>
+            xml解析器
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.UpdateOpcSession(System.String,OpcUaHelper.Extension.DTO.OpcSession)">
+            <summary>
+            更新opc会话信息
+            </summary>
+            <param name="filePath"></param>
+            <param name="session"></param>
+            <returns>result</returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.AddOpcSession(System.String,OpcUaHelper.Extension.DTO.OpcSession)">
+            <summary>
+            添加opc会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="session"></param>
+            <returns>result</returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.RemoveOpcSession(System.String,System.String)">
+            <summary>
+            移除opc会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="sessionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.AddOpcSubscription(System.String,System.String,OpcUaHelper.Extension.DTO.OpcSignalPair)">
+            <summary>
+            添加opc订阅
+            </summary>
+            <param name="filePath"></param>
+            <param name="sessionId"></param>
+            <param name="pair"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.RemoveOpcSubscription(System.String,System.String,System.String)">
+            <summary>
+            移除opc订阅
+            </summary>
+            <param name="filePath"></param>
+            <param name="sessionId"></param>
+            <param name="pairDbiNodeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.RemoveAllOpcSession(System.String,OpcUaHelper.Extension.DTO.OpcConfig)">
+            <summary>
+            移除所有的opc会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.ParseRCConfig(System.String,OpcUaHelper.Extension.DTO.RCConfig@)">
+            <summary>
+            解析机器人示教器配置文件
+            </summary>
+            <param name="filePath"></param>
+            <param name="rcConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.AddRCSession(System.String,OpcUaHelper.Extension.DTO.RCSession)">
+            <summary>
+            添加机器人示教器会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.UpdateRCSession(System.String,OpcUaHelper.Extension.DTO.RCSession)">
+            <summary>
+            更新机器人示教器会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.RemoveRCSession(System.String,System.String)">
+            <summary>
+            移除机器人示教器会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="sessionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.RemoveAllRCSession(System.String,OpcUaHelper.Extension.DTO.RCConfig)">
+            <summary>
+            移除所有的rc会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.AddRCIOItem(System.String,System.String,OpcUaHelper.Extension.DTO.IOItem)">
+            <summary>
+            添加机器人控制器IO
+            </summary>
+            <param name="filePath"></param>
+            <param name="sessionId"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.RemoveRCIOItem(System.String,System.String,OpcUaHelper.Extension.DTO.IOItem)">
+            <summary>
+            移除机器人控制器IO
+            </summary>
+            <param name="filePath"></param>
+            <param name="sessionId"></param>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.ParseAbbVrcConfig(System.String,OpcUaHelper.Extension.DTO.RSConfig@)">
+            <summary>
+            解析机器人示教器配置文件
+            </summary>
+            <param name="filePath"></param>
+            <param name="rsConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.AddAbbVrcSession(System.String,OpcUaHelper.Extension.DTO.RSSession)">
+            <summary>
+            添加机器人示教器会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.UpdateAbbVrcSession(System.String,OpcUaHelper.Extension.DTO.RSSession)">
+            <summary>
+            更新机器人示教器会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.RemoveAbbVrcSession(System.String,System.String)">
+            <summary>
+            移除机器人示教器会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="sessionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.RemoveAllAbbVrcSession(System.String,OpcUaHelper.Extension.DTO.RSConfig)">
+            <summary>
+            移除所有的abb vrc会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.ParseKukaConfig(System.String,OpcUaHelper.Extension.DTO.KukaConfig@)">
+            <summary>
+            解析kuka.officelite配置文件
+            </summary>
+            <param name="filePath"></param>
+            <param name="kukaConfig"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.AddKukaSession(System.String,OpcUaHelper.Extension.DTO.KukaSession)">
+            <summary>
+            添加kuka.officelite会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.UpdateKukaSession(System.String,OpcUaHelper.Extension.DTO.KukaSession)">
+            <summary>
+            更新kuka.officelite会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="session"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.RemoveKukaSession(System.String,System.String)">
+            <summary>
+            移除kuka.officelite会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="sessionId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.RemoveAllKukaVrcSession(System.String,OpcUaHelper.Extension.DTO.KukaConfig)">
+            <summary>
+            移除所有的abb vrc会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.ParseSetupConfig(System.String,OpcUaHelper.Extension.DTO.SetupConfig@)">
+            <summary>
+            解析设置配置文件
+            </summary>
+            <param name="filePath"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.Utils.XmlPauser.UpdateSetupConfig(System.String,OpcUaHelper.Extension.DTO.SetupConfig)">
+            <summary>
+            更新kuka.officelite会话
+            </summary>
+            <param name="filePath"></param>
+            <param name="config"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.FileHelper">
+            <summary>
+            文件帮助类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.FileHelper.ReadFile(System.String)">
+            <summary>
+            读文件
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.FileHelper.WriteFile(System.String,System.String)">
+            <summary>
+            写文件
+            </summary>
+            <param name="path"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.FileHelper.DeleteFileData(System.String)">
+            <summary>
+            删除文件数据
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.FileHelper.UpdateFile(System.String,System.String)">
+            <summary>
+            更新文件
+            </summary>
+            <param name="path"></param>
+            <param name="data"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.HttpUtil">
+            <summary>
+            http通讯工具类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.HttpUtil.Get(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="url"></param>
+            <param name="Timeout"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OpcUaHelper.Extension.LogUtil">
+            <summary>
+            日志工具类
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.LogUtil.LstMessage">
+            <summary>
+            日志队列
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.LogUtil.MaxMsgCount">
+            <summary>
+            保存日志的最大数量,应加以限制，否则内存一直增加
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Extension.LogUtil.OnValueChangedEventHandler">
+            <summary>
+            日志变化(新增)的委托,外部类可以注册此事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:OpcUaHelper.Extension.LogUtil.OnValueChangedEvent">
+            <summary>
+            值变化事件
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Extension.LogUtil._curMsg">
+            <summary>
+            当前消息
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.LogUtil.CurMsg">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.LogUtil.DeleteOverdueLog(System.Int32)">
+            <summary>
+            删除过期的日志
+            </summary>
+            <param name="saveDay"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.LogUtil.OnValueChanged(System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:OpcUaHelper.Extension.WebsocketUtil">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Extension.WebsocketUtil.Users">
+            <summary>
+            所有用户打开的场景
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.WebsocketUtil.#ctor(System.String,System.Action{System.String},System.Action{System.String},System.Action{System.String})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="url"></param>
+            <param name="runhandler"></param>
+            <param name="stopHander"></param>
+            <param name="resetHandler"></param>
+        </member>
+        <member name="M:OpcUaHelper.Extension.WebsocketUtil.Connect">
+            <summary>
+            建立websocket连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Extension.WebsocketUtil.Disconnect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Extension.WebsocketUtil.SendMessage(System.String)">
+            <summary>
+            发送数据
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="T:OpcUaHelper.Forms.AddIOItemForm">
+            <summary>
+            添加IO item
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.AddIOItemForm.#ctor(System.String,OpcUaHelper.Extension.DTO.RCConfig,System.String)">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.AddIOItemForm.ItemExist(OpcUaHelper.Extension.DTO.IOItem)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="F:OpcUaHelper.Forms.AddIOItemForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.AddIOItemForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.AddIOItemForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Forms.CreateNewABBSessionForm">
+             <summary>
+            创建abb控制器连接
+             </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewABBSessionForm.#ctor(System.String,System.String,OpcUaHelper.Extension.DTO.RCSession@)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="robotName"></param>
+            <param name="commProtocol"></param>
+            <param name="session"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewABBSessionForm.#ctor(OpcUaHelper.Extension.DTO.RCSession,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="session"></param>
+            <param name="commProtocol"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewABBSessionForm.CreateNewABBSessionForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            form load
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewABBSessionForm.CreateNewABBSessionForm_FormClosed(System.Object,System.Windows.Forms.FormClosedEventArgs)">
+            <summary>
+            form closed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:OpcUaHelper.Forms.CreateNewABBSessionForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewABBSessionForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewABBSessionForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Forms.CreateNewKukaSessionForm">
+             <summary>
+            创建kuka控制器连接
+             </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewKukaSessionForm.#ctor(System.String,OpcUaHelper.Extension.DTO.KukaSession@)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="robotName"></param>
+            <param name="session"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewKukaSessionForm.#ctor(OpcUaHelper.Extension.DTO.KukaSession)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="session"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewKukaSessionForm.CreateNewABBSessionForm_Load(System.Object,System.EventArgs)">
+            <summary>
+            form load
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewKukaSessionForm.CreateNewABBSessionForm_FormClosed(System.Object,System.Windows.Forms.FormClosedEventArgs)">
+            <summary>
+            form closed
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:OpcUaHelper.Forms.CreateNewKukaSessionForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewKukaSessionForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.CreateNewKukaSessionForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Forms.DiscoverServerDlg">
+            <summary>
+            Prompts the user to specify a host name and discovers the servers.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.DiscoverServerDlg.#ctor">
+            <summary>
+            Creates an empty form.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.DiscoverServerDlg.ShowDialog(Opc.Ua.ApplicationConfiguration)">
+            <summary>
+            Shows the dialog.
+            </summary>
+            <param name="configuration">The client applicatio configuration.</param>
+            <returns>The selected endpoint url</returns>
+        </member>
+        <member name="M:OpcUaHelper.Forms.DiscoverServerDlg.ShowDialog(Opc.Ua.ApplicationConfiguration,System.String)">
+            <summary>
+            Shows the dialog.
+            </summary>
+            <param name="configuration">The client applicatio configuration.</param>
+            <param name="hostName">The default host name.</param>
+            <returns>The selected endpoint url</returns>
+        </member>
+        <member name="M:OpcUaHelper.Forms.DiscoverServerDlg.GetEndpoints(System.String)">
+            <summary>
+            Gets the endpoints for the host.
+            </summary>
+            <param name="hostName">Name of the host.</param>
+        </member>
+        <member name="F:OpcUaHelper.Forms.DiscoverServerDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.DiscoverServerDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.DiscoverServerDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Forms.FormBrowseServer">
+            <summary>
+            一个浏览OPC服务器节点的窗口类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.#ctor">
+            <summary>
+            允许自己输入服务器地址的实例化
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.#ctor(System.String)">
+            <summary>
+            固定地址且不允许更改的实例化
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.Forms.FormBrowseServer.m_OpcUaClient">
+            <summary>
+            Opc客户端的核心类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.OpcUaClientInitialization">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.OpcUaClient_ConnectComplete(System.Object,System.EventArgs)">
+            <summary>
+            连接服务器结束后马上浏览根节点
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.OpcUaClient_OpcStatusChange1(System.Object,OpcUaHelper.OpcUaStatusEventArgs)">
+            <summary>
+            OPC 客户端的状态变化后的消息提醒
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ReadOneNodeFiveAttributes(System.Collections.Generic.List{Opc.Ua.NodeId})">
+            <summary>
+            0:NodeClass  1:Value  2:AccessLevel  3:DisplayName  4:Description
+            </summary>
+            <param name="nodeIds"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ReadNoteDataValueAttributes(Opc.Ua.NodeId,System.UInt32)">
+            <summary>
+            读取一个节点的指定属性
+            </summary>
+            <param name="nodeId"></param>
+            <param name="attribute"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ConnectOpcBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            连接opc按钮点击事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.PopulateBranch(Opc.Ua.NodeId,System.Windows.Forms.TreeNodeCollection)">
+            <summary>
+            Populates the branch in the tree view.
+            </summary>
+            <param name="sourceId">The NodeId of the Node to browse.</param>
+            <param name="nodes">The node collect to populate.</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.label2_Click(System.Object,System.EventArgs)">
+            <summary>
+            点击了节点名称前的内容进行复制
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:OpcUaHelper.Forms.FormBrowseServer.ScpConfig">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.LogMessageChanged(System.Object,System.EventArgs)">
+            <summary>
+            日志信息发生变化事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.OnLogMessage(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ClientRadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            切换客户端
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ServerRadioButton_CheckedChanged(System.Object,System.EventArgs)">
+            <summary>
+            切换服务端
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.LogListBox_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            选择日志改变
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ApplySetupButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            应用设置
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.TreeViewEx1_DrawNode(System.Object,System.Windows.Forms.DrawTreeNodeEventArgs)">
+            <summary>
+            treeview 绘制节点
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.Btn_updateSceneId_Click(System.Object,System.EventArgs)">
+            <summary>
+            更新dbi场景id
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ExtensionInitialization">
+            <summary>
+            扩展内容初始化
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ParseWinscpConfig">
+            <summary>
+            解析winscp配置文件
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.WSClientInit">
+            <summary>
+            websocket client 初始化
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.WSServerInit">
+            <summary>
+            websocket server 初始化
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.CreateWSServerUrl">
+            <summary>
+            创建ws server地址
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.InitSetup">
+            <summary>
+            初始化设置
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ConnectWebsocketButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            连接Websocket服务器
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.CreateWSServerButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            创建ws server服务器
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ParseOpcConfig">
+            <summary>
+            解析opc配置文件
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.SetNodeIcon(System.Windows.Forms.TreeNode,OpcUaHelper.Extension.DTO.DBINode_FullVariable)">
+            <summary>
+            设置节点标签
+            </summary>
+            <param name="node"></param>
+            <param name="data"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ReverseCtrl(OpcUaHelper.Extension.CommonEventNode)">
+            <summary>
+            反向写入
+            </summary>
+            <param name="baseEvent"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.UpdateComboBox_OpcUrl">
+            <summary>
+            更新ComboBox_OpcUrl
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.Btn_managerOpcSession_Click(System.Object,System.EventArgs)">
+            <summary>
+            opc会话管理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.Btn_GetDBIData_Click(System.Object,System.EventArgs)">
+            <summary>
+            获取dbi场景信号变量
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.GetSignalList(System.Boolean)">
+            <summary>
+            获得场景信号集合
+            </summary>
+            <param name="showAll"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.TreeViewEx1_AfterSelect(System.Object,System.Windows.Forms.TreeViewEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.GetOpcData">
+            <summary>
+            订阅所有数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.OpcSessionChanged(OpcUaHelper.Extension.CommonEventNode)">
+            <summary>
+            opc会话变化事件函数
+            </summary>
+            <param name="baseEvent"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ReadAndWritePairedBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            读写配对
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.WritePairedBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            写入配对
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ParseRCConfig">
+            <summary>
+            解析abb控制器配置文件
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.RobotControllerItemOperation(System.Object,System.Windows.Forms.ToolStripItemClickedEventArgs)">
+            <summary>
+            机器人控制器item操作
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.DGV_RC_SelectionChanged(System.Object,System.EventArgs)">
+            <summary>
+            机器人控制器dgv SelectionChanged
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.RCGetDBISceneDataButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            获得dbi场景中所有的机器人信息
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.CreateNewRCSessionButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            创建新的机器人示教器连接
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.RefreshRCDataGridView">
+            <summary>
+            刷新RCDataGridView 
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ReeditRCItem(System.String)">
+            <summary>
+            重新编辑
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.DeleteRCItem(System.String)">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.GetRcData">
+            <summary>
+            开始连接机器人示教器
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.DisconnectRc">
+            <summary>
+            断开和机器人示教器的连接
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.GetRcRobotDataHandler(System.String,System.Double[])">
+            <summary>
+            获得控制器机器人轴数据
+            </summary>
+            <param name="robotName"></param>
+            <param name="robotdata"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.OnConnectedHandler(System.String)">
+            <summary>
+            连接成功响应
+            </summary>
+            <param name="sessionId"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.OnDisconnectedHandler(System.String,System.String)">
+            <summary>
+            断开事件响应
+            </summary>
+            <param name="sessionId"></param>
+            <param name="msg"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ioButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            打开机器人控制器IO配置窗体
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ParseRSConfig">
+            <summary>
+            解析robotstudio配置文件
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.RS_BindBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            robotStudio 绑定
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ScanButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            扫描
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.RSItemOperation(System.Object,System.Windows.Forms.ToolStripItemClickedEventArgs)">
+            <summary>
+            robotstudio 配对 item操作
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.DeleteRSItem(System.String)">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.RefreshRobotStudioDataGridView">
+            <summary>
+            刷新robotStudio DataGridView
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.StartGetAbbVrcData">
+            <summary>
+            开始获得abb虚拟示教器数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.StopGetAbbVrcData">
+            <summary>
+            停止获得abb虚拟示教器数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.GetAbbVrcRobotDataHandler(System.String,System.Double[])">
+            <summary>
+            获得abb虚拟示教器轴数据事件处理方法
+            </summary>
+            <param name="robotName"></param>
+            <param name="robotdata"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ParseKukaConfig">
+            <summary>
+            解析kuka虚拟示教器配置文件
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.RefreshKukaDataGridView">
+            <summary>
+            刷新kuka虚拟示教器 DataGridView
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.KukaSessionItemOperation(System.Object,System.Windows.Forms.ToolStripItemClickedEventArgs)">
+            <summary>
+            robotstudio 配对 item操作
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.DeleteKukaSession(System.String)">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.StartGetKukaVrcData">
+            <summary>
+            开始获得kuka虚拟示教器数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.KukaDisconnectHandler(System.String)">
+            <summary>
+            kuka虚拟示教器断开连接
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.StopGetKukaVrcData">
+            <summary>
+            停止获得kuka虚拟示教器数据
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.GetKukaVrcRobotDataHandler(System.String,System.Double[])">
+            <summary>
+            获得库卡虚拟示教器轴数据事件处理方法
+            </summary>
+            <param name="robotName"></param>
+            <param name="robotdata"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ListDBISceneRobot(System.Collections.Generic.List{OpcUaHelper.Extension.DTO.DBINode_FullVariable},System.Windows.Forms.TreeNodeCollection,System.Windows.Forms.ListBox)">
+            <summary>
+            列出dbi场景中所有的机器人
+            </summary>
+            <param name="data"></param>
+            <param name="nodes"></param>
+            <param name="listBox"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.BrowserDBISceneData(System.Windows.Forms.TreeNodeCollection,System.Windows.Forms.ListBox)">
+            <summary>
+            browser dbi data
+            </summary>
+            <param name="nodes"></param>
+            <param name="listBox"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.DbiPopulateBranch(System.Collections.Generic.List{OpcUaHelper.Extension.DTO.DBINode_FullVariable},System.Windows.Forms.TreeView,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="dataList"></param>
+            <param name="treeView"></param>
+            <param name="ShowAll"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ParseSetupConfig">
+            <summary>
+            解析设置配置文件
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.GetLocalIP">
+            <summary>
+            获取本地ip
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.StartReconnectThread">
+            <summary>
+            开启重连线程
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.Reconnect">
+            <summary>
+            重连
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.ControlOperation(System.Boolean)">
+            <summary>
+            激活/禁止页面操作
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.StopRunning">
+            <summary>
+            停止运行时恢复页面操作
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.TextBox_OnlyInt_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            限制只能输入整数
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.LimitIntegerMinValue(System.Int32,System.Int32)">
+            <summary>
+            限制最小值不得低于。。。
+            </summary>
+            <param name="value"></param>
+             <param name="minValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.LimitIntegerValue(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            限制最小值不得低于。。。最大值不得大于...
+            </summary>
+            <param name="value"></param>
+             <param name="minValue"></param>
+             <param name="maxValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.btn_openLogDir_Click(System.Object,System.EventArgs)">
+            <summary>
+            打开日志文件夹
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:OpcUaHelper.Forms.FormBrowseServer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormBrowseServer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Forms.FormConnectSelect">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormConnectSelect.#ctor(OpcUaHelper.OpcUaClient)">
+            <summary>
+            
+            </summary>
+            <param name="opcUaClient"></param>
+        </member>
+        <member name="F:OpcUaHelper.Forms.FormConnectSelect.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormConnectSelect.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormConnectSelect.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Forms.FormCreateNewSession">
+            <summary>
+            创建ftp客户端
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormCreateNewSession.#ctor(OpcUaHelper.Extension.WinscpConfig)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormCreateNewSession.closeBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            关闭窗体
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:OpcUaHelper.Forms.FormCreateNewSession.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormCreateNewSession.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormCreateNewSession.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Forms.FormEndpoints">
+            <summary>
+            获得endpoint窗体
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormEndpoints.#ctor(OpcUaHelper.Extension.DTO.OpcSession,OpcUaHelper.OpcUaClient)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="session"></param>
+            <param name="opcUaClient"></param>
+            <param name="updateEPDescriptDel">更新epDescript委托</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormEndpoints.AnonymousLoginBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            匿名登录
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormEndpoints.UsernameLoginBtn_Click(System.Object,System.EventArgs)">
+            <summary>
+            用户密码登录
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormEndpoints.EndpointListView_ItemSelectionChanged(System.Object,System.Windows.Forms.ListViewItemSelectionChangedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormEndpoints.Btn_getEndpoints_Click(System.Object,System.EventArgs)">
+            <summary>
+            获得所有可用的endpoint
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:OpcUaHelper.Forms.FormEndpoints.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormEndpoints.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormEndpoints.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Forms.FormOpcSessionManager">
+            <summary>
+            opc会话管理器窗体
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormOpcSessionManager.#ctor(OpcUaHelper.Extension.DTO.OpcConfig,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="opcCfg"></param>
+            <param name="filePath"></param>
+            <param name="sceneId"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormOpcSessionManager.Button_addOpcSession_Click(System.Object,System.EventArgs)">
+            <summary>
+            新建会话
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormOpcSessionManager.Button_remove_Click(System.Object,System.EventArgs)">
+            <summary>
+            移除会话
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormOpcSessionManager.Button_update_Click(System.Object,System.EventArgs)">
+            <summary>
+            修改会话
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormOpcSessionManager.DGV_opcPairs_CellMouseUp(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)">
+            <summary>
+            DGV_opcSessions右键操作
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormOpcSessionManager.UpdatePairDGV(System.Collections.Generic.Dictionary{System.String,OpcUaHelper.Extension.DTO.OpcSignalPair})">
+            <summary>
+            更新opc配对dgv
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormOpcSessionManager.RemoveItem(System.Object,System.Windows.Forms.ToolStripItemClickedEventArgs)">
+            <summary>
+            移除opc订阅节点
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:OpcUaHelper.Forms.FormOpcSessionManager.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormOpcSessionManager.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.FormOpcSessionManager.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Forms.RobotControllerIOForm">
+            <summary>
+            机器人控制器IO表单
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.RobotControllerIOForm.#ctor(System.String,OpcUaHelper.Extension.DTO.RCConfig)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.RobotControllerIOForm.AddRobotControllerIOItemCompleteHandler(OpcUaHelper.Extension.CommonEventNode)">
+            <summary>
+            添加item事件回调方法
+            </summary>
+            <param name="baseEvent"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.RobotControllerIOForm.AddItem2DGV(OpcUaHelper.Extension.DTO.IOItem)">
+            <summary>
+            添加item 到dgv
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.RobotControllerIOForm.RobotControllerIOForm_FormClosed(System.Object,System.Windows.Forms.FormClosedEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.RobotControllerIOForm.RemoveItemButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            移除按钮点击事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:OpcUaHelper.Forms.RobotControllerIOForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.RobotControllerIOForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpcUaHelper.Forms.RobotControllerIOForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.Forms.TreeViewEx">
+            <summary>
+            无闪烁的树节点控件，结果还是没有实现
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.TreeViewEx.#ctor">
+            <summary>
+            实例化一个新的控件
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.Forms.TreeViewEx.OnNotifyMessage(System.Windows.Forms.Message)">
+            <summary>
+            通知
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="T:OpcUaHelper.ExceptionDlg">
+            <summary>
+            A dialog that displays an exception trace in an HTML page.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ExceptionDlg.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:OpcUaHelper.ExceptionDlg"/> class.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ExceptionDlg.ReplaceSpecialCharacters(System.String)">
+            <summary>
+            Replaces all special characters in the message.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ExceptionDlg.Show(System.String,System.Exception)">
+            <summary>
+            Displays the exception in a dialog.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ExceptionDlg.ShowDialog(System.String,System.Exception)">
+            <summary>
+            Display the exception in the dialog.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.ExceptionDlg.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.ExceptionDlg.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:OpcUaHelper.ExceptionDlg.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.TypeDeclaration">
+            <summary>
+            Stores a type declaration retrieved from a server.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.TypeDeclaration.NodeId">
+            <summary>
+            The node if for the type.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.TypeDeclaration.Declarations">
+            <summary>
+            The fully inhierited list of instance declarations for the type.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.InstanceDeclaration">
+            <summary>
+            Stores an instance declaration fetched from the server.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.RootTypeId">
+            <summary>
+            The type that the declaration belongs to.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.BrowsePath">
+            <summary>
+            The browse path to the instance declaration.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.BrowsePathDisplayText">
+            <summary>
+            The browse path to the instance declaration.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.DisplayPath">
+            <summary>
+            A localized path to the instance declaration.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.NodeId">
+            <summary>
+            The node id for the instance declaration.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.NodeClass">
+            <summary>
+            The node class of the instance declaration.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.BrowseName">
+            <summary>
+            The browse name for the instance declaration.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.DisplayName">
+            <summary>
+            The display name for the instance declaration.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.Description">
+            <summary>
+            The description for the instance declaration.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.ModellingRule">
+            <summary>
+            The modelling rule for the instance declaration (i.e. Mandatory or Optional).
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.DataType">
+            <summary>
+            The data type for the instance declaration.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.ValueRank">
+            <summary>
+            The value rank for the instance declaration.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.BuiltInType">
+            <summary>
+            The built-in type parent for the data type.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.DataTypeDisplayText">
+            <summary>
+            A localized name for the data type.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.InstanceDeclaration.OverriddenDeclaration">
+            <summary>
+            An instance declaration that has been overridden by the current instance.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.FilterDeclarationField">
+            <summary>
+            A field in a filter declaration.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclarationField.#ctor">
+            <summary>
+            Creates a new instance of a FilterDeclarationField.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclarationField.#ctor(OpcUaHelper.InstanceDeclaration)">
+            <summary>
+            Creates a new instance of a FilterDeclarationField.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclarationField.#ctor(OpcUaHelper.FilterDeclarationField)">
+            <summary>
+            Creates a new instance of a FilterDeclarationField.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.FilterDeclarationField.Selected">
+            <summary>
+            Whether the field is returned as part of the event notification.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.FilterDeclarationField.DisplayInList">
+            <summary>
+            Whether the field is displayed in the list view.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.FilterDeclarationField.FilterEnabled">
+            <summary>
+            Whether the filter is enabled.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.FilterDeclarationField.FilterOperator">
+            <summary>
+            The filter operator to use in the where clause.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.FilterDeclarationField.FilterValue">
+            <summary>
+            The filter value to use in the where clause.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.FilterDeclarationField.InstanceDeclaration">
+            <summary>
+            The instance declaration associated with the field.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.FilterDeclaration">
+            <summary>
+            A declararion of an event filter.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclaration.#ctor">
+            <summary>
+            Creates a new instance of a FilterDeclaration.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclaration.#ctor(OpcUaHelper.TypeDeclaration,OpcUaHelper.FilterDeclaration)">
+            <summary>
+            Creates a new instance of a FilterDeclaration.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclaration.#ctor(OpcUaHelper.FilterDeclaration)">
+            <summary>
+            Creates a new instance of a FilterDeclaration.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclaration.GetFilter">
+            <summary>
+            Returns the event filter defined by the filter declaration.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclaration.AddSimpleField(Opc.Ua.QualifiedName,Opc.Ua.BuiltInType,System.Boolean)">
+            <summary>
+            Adds a simple field to the declaration.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclaration.AddSimpleField(Opc.Ua.QualifiedName,Opc.Ua.BuiltInType,System.Int32,System.Boolean)">
+            <summary>
+            Adds a simple field to the declaration.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclaration.AddSimpleField(Opc.Ua.QualifiedName[],Opc.Ua.BuiltInType,System.Int32,System.Boolean)">
+            <summary>
+            Adds a simple field to the declaration.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclaration.AddSimpleField(Opc.Ua.QualifiedName[],Opc.Ua.NodeClass,Opc.Ua.BuiltInType,System.Int32,System.Boolean)">
+            <summary>
+            Adds a simple field to the declaration.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclaration.GetSelectClause">
+            <summary>
+            Returns the select clause defined by the filter declaration.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclaration.GetWhereClause">
+            <summary>
+            Returns the where clause defined by the filter declaration.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FilterDeclaration.GetValue``1(Opc.Ua.QualifiedName,Opc.Ua.VariantCollection,``0)">
+            <summary>
+            Returns the value for the specified browse name.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.FilterDeclaration.EventTypeId">
+            <summary>
+            The type of event.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.FilterDeclaration.Fields">
+            <summary>
+            The list of declarations for the fields.
+            </summary>
+        </member>
+        <member name="T:OpcUaHelper.OpcUaClient">
+            <summary>
+            一个二次封装了的OPC UA库，支持从opc ua服务器读写节点数据，批量读写，订阅，批量订阅，历史数据读取，方法调用操作。
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.#ctor">
+            <summary>
+            默认的构造函数，实例化一个新的OPC UA类
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ConnectServer(System.String)">
+            <summary>
+            connect to server
+            </summary>
+            <param name="serverUrl">remote url</param>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.Connect(System.String)">
+            <summary>
+            Creates a new session.
+            </summary>
+            <returns>The new session object.</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.Disconnect">
+            <summary>
+            Disconnects from the server.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.UpdateStatus(System.Boolean,System.DateTime,System.String,System.Object[])">
+            <summary>
+            Report the client status
+            </summary>
+            <param name="error">Whether the status represents an error.</param>
+            <param name="time">The time associated with the status.</param>
+            <param name="status">The status message.</param>
+            <param name="args">Arguments used to format the status message.</param>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.Session_KeepAlive(Opc.Ua.Client.Session,Opc.Ua.Client.KeepAliveEventArgs)">
+            <summary>
+            Handles a keep alive event from a session.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.Server_ReconnectComplete(System.Object,System.EventArgs)">
+            <summary>
+            Handles a reconnect event complete from the reconnect handler.
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.SetLogPathName(System.String,System.Boolean)">
+            <summary>
+            设置OPC客户端的日志输出
+            </summary>
+            <param name="filePath">完整的文件路径</param>
+            <param name="deleteExisting">是否删除原文件</param>
+        </member>
+        <member name="P:OpcUaHelper.OpcUaClient.OpcUaName">
+            <summary>
+            a name of application name show on server
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcUaClient.UseSecurity">
+            <summary>
+            Whether to use security when connecting.
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcUaClient.UserIdentity">
+            <summary>
+            The user identity to use when creating the session.
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcUaClient.Session">
+            <summary>
+            The currently active session. 
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcUaClient.Connected">
+            <summary>
+            Indicate the connect status
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcUaClient.ReconnectPeriod">
+            <summary>
+            The number of seconds between reconnect attempts (0 means reconnect is disabled).
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.OpcUaClient.KeepAliveComplete">
+            <summary>
+            Raised when a good keep alive from the server arrives.
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.OpcUaClient.ReconnectStarting">
+            <summary>
+            Raised when a reconnect operation starts.
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.OpcUaClient.ReconnectComplete">
+            <summary>
+            Raised when a reconnect operation completes.
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.OpcUaClient.ConnectComplete">
+            <summary>
+            Raised after successfully connecting to or disconnecing from a server.
+            </summary>
+        </member>
+        <member name="E:OpcUaHelper.OpcUaClient.OpcStatusChange">
+            <summary>
+            Raised after the client status change
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcUaClient.AppConfig">
+            <summary>
+            配置信息
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ReadNode(Opc.Ua.NodeId)">
+            <summary>
+            Read a value node from server
+            </summary>
+            <param name="nodeId">node id</param>
+            <returns>DataValue</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ReadNode``1(System.String)">
+            <summary>
+            Read a value node from server
+            </summary>
+            <typeparam name="T">type of value</typeparam>
+            <param name="tag">node id</param>
+            <returns>实际值</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ReadNodeAsync``1(System.String)">
+            <summary>
+            Read a tag asynchronously
+            </summary>
+            <typeparam name="T">The type of tag to read</typeparam>
+            <param name="tag">tag值</param>
+            <returns>The value retrieved from the OPC</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ReadNodes(Opc.Ua.NodeId[])">
+            <summary>
+            read several value nodes from server
+            </summary>
+            <param name="nodeIds">all NodeIds</param>
+            <returns>all values</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ReadNodesAsync(Opc.Ua.NodeId[])">
+            <summary>
+            read several value nodes from server
+            </summary>
+            <param name="nodeIds">all NodeIds</param>
+            <returns>all values</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ReadNodes``1(System.String[])">
+            <summary>
+            read several value nodes from server
+            </summary>
+            <param name="tags">所以的节点数组信息</param>
+            <returns>all values</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ReadNodesAsync``1(System.String[])">
+            <summary>
+            read several value nodes from server
+            </summary>
+            <param name="tags">all NodeIds</param>
+            <returns>all values</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.WriteNode``1(System.String,``0)">
+            <summary>
+            write a note to server(you should use try catch)
+            </summary>
+            <typeparam name="T">The type of tag to write on</typeparam>
+            <param name="tag">节点名称</param>
+            <param name="value">值</param>
+            <returns>if success True,otherwise False</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.WriteNodeAsync``1(System.String,``0)">
+            <summary>
+            Write a value on the specified opc tag asynchronously
+            </summary>
+            <typeparam name="T">The type of tag to write on</typeparam>
+            <param name="tag">The fully-qualified identifier of the tag. You can specify a subfolder by using a comma delimited name. E.g: the tag `foo.bar` writes on the tag `bar` on the folder `foo`</param>
+            <param name="value">The value for the item to write</param>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.WriteNodes(System.String[],System.Object[])">
+            <summary>
+            所有的节点都写入成功，返回<c>True</c>，否则返回<c>False</c>
+            </summary>
+            <param name="tags">节点名称数组</param>
+            <param name="values">节点的值数据</param>
+            <returns>所有的是否都写入成功</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.DeleteExsistNode(System.String)">
+            <summary>
+            删除一个节点的操作，除非服务器配置允许，否则引发异常，成功返回<c>True</c>，否则返回<c>False</c>
+            </summary>
+            <param name="tag">节点文本描述</param>
+            <returns>是否删除成功</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.AddNewNode(Opc.Ua.NodeId)">
+            <summary>
+            新增一个节点数据
+            </summary>
+            <param name="parent">父节点tag名称</param>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.AddSubscription(System.String,System.String,System.Action{System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs})">
+            <summary>
+            新增一个订阅，需要指定订阅的关键字，订阅的tag名，以及回调方法
+            </summary>
+            <param name="key">关键字</param>
+            <param name="tag">tag</param>
+            <param name="callback">回调方法</param>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.AddSubscription(System.String,System.String[],System.Action{System.String,Opc.Ua.Client.MonitoredItem,Opc.Ua.Client.MonitoredItemNotificationEventArgs})">
+            <summary>
+            新增一批订阅，需要指定订阅的关键字，订阅的tag名数组，以及回调方法
+            </summary>
+            <param name="key">关键字</param>
+            <param name="tags">节点名称数组</param>
+            <param name="callback">回调方法</param>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.RemoveSubscription(System.String)">
+            <summary>
+            移除订阅消息，如果该订阅消息是批量的，也直接移除
+            </summary>
+            <param name="key">订阅关键值</param>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.RemoveAllSubscription">
+            <summary>
+            移除所有的订阅消息
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ReadHistoryRawDataValues(System.String,System.DateTime,System.DateTime,System.UInt32,System.Boolean)">
+            <summary>
+            read History data
+            </summary>
+            <param name="tag">节点的索引</param>
+            <param name="start">开始时间</param>
+            <param name="end">结束时间</param>
+            <param name="count">读取的个数</param>
+            <param name="containBound">是否包含边界</param>
+            <returns>读取的数据列表</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ReadHistoryRawDataValues``1(System.String,System.DateTime,System.DateTime,System.UInt32,System.Boolean)">
+            <summary>
+            读取一连串的历史数据，并将其转化成指定的类型
+            </summary>
+            <param name="tag">节点的索引</param>
+            <param name="start">开始时间</param>
+            <param name="end">结束时间</param>
+            <param name="count">读取的个数</param>
+            <param name="containBound">是否包含边界</param>
+            <returns>读取的数据列表</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.BrowseNodeReference(System.String)">
+            <summary>
+            浏览一个节点的引用
+            </summary>
+            <param name="tag">节点值</param>
+            <returns>引用节点描述</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ReadNoteAttributes(System.String)">
+            <summary>
+            读取一个节点的所有属性
+            </summary>
+            <param name="tag">节点信息</param>
+            <returns>节点的特性值</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.ReadNoteDataValueAttributes(System.String)">
+            <summary>
+            读取一个节点的所有属性
+            </summary>
+            <param name="tag">节点值</param>
+            <returns>所有的数据</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.CallMethodByNodeId(System.String,System.String,System.Object[])">
+            <summary>
+            call a server method
+            </summary>
+            <param name="tagParent">方法的父节点tag</param>
+            <param name="tag">方法的节点tag</param>
+            <param name="args">传递的参数</param>
+            <returns>输出的结果值</returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.DoConnectComplete(System.Object)">
+            <summary>
+            Raises the connect complete event on the main GUI thread.
+            </summary>
+        </member>
+        <member name="F:OpcUaHelper.OpcUaClient.endpointDescription">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.CreateClientConfiguration">
+            <summary>Creats a minimal required ApplicationConfiguration</summary>
+            <returns>The ApplicationConfiguration</returns>
+            <exception cref="T:System.Exception">Throws and forwards any exception with short error description.</exception>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.CreateApplicationConfiguration(System.String)">
+            <summary>
+            创建ApplicationConfiguration
+            </summary>
+            <param name="appName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.GetLocalIpAddressAndDns">
+            <summary>Gets the local IP addresses and the DNS name</summary>
+            <returns>The list of IPs and names</returns>
+            <exception cref="T:System.Exception">Throws and forwards any exception with short error description.</exception>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.BrowseNode(Opc.Ua.ReferenceDescription)">
+            <summary>Browses a node ID provided by a ReferenceDescription</summary>
+            <param name="refDesc">The ReferenceDescription</param>
+            <returns>ReferenceDescriptionCollection of found nodes</returns>
+            <exception cref="T:System.Exception">Throws and forwards any exception with short error description.</exception>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.FindServers(System.String)">
+            <summary>Finds Servers based on a discovery url</summary>
+            <param name="discoveryUrl">The discovery url</param>
+            <returns>ApplicationDescriptionCollection containing found servers</returns>
+            <exception cref="T:System.Exception">Throws and forwards any exception with short error description.</exception>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaClient.GetEndpoints(System.String)">
+            <summary>Finds Endpoints based on a server's url</summary>
+            <param name="serverUrl">The server's url</param>
+            <returns>EndpointDescriptionCollection containing found Endpoints</returns>
+            <exception cref="T:System.Exception">Throws and forwards any exception with short error description.</exception>
+        </member>
+        <member name="T:OpcUaHelper.OpcUaStatusEventArgs">
+            <summary>
+            OPC UA的状态更新消息
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcUaStatusEventArgs.Error">
+            <summary>
+            是否异常
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcUaStatusEventArgs.Time">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcUaStatusEventArgs.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.OpcUaStatusEventArgs.ToString">
+            <summary>
+            转化为字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OpcUaHelper.OpcNodeAttribute">
+            <summary>
+            读取属性过程中用于描述的
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcNodeAttribute.Name">
+            <summary>
+            属性的名称
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcNodeAttribute.Type">
+            <summary>
+            属性的类型描述
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcNodeAttribute.StatusCode">
+            <summary>
+            操作结果状态描述
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.OpcNodeAttribute.Value">
+            <summary>
+            属性的值，如果读取错误，返回文本描述
+            </summary>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.GetAccessLevelDisplayText(System.Byte)">
+            <summary>
+            Gets the display text for the access level attribute.
+            </summary>
+            <param name="accessLevel">The access level.</param>
+            <returns>The access level formatted as a string.</returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.GetEventNotifierDisplayText(System.Byte)">
+            <summary>
+            Gets the display text for the event notifier attribute.
+            </summary>
+            <param name="accessLevel">The event notifier.</param>
+            <returns>The event notifier formatted as a string.</returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.GetValueRankDisplayText(System.Int32)">
+            <summary>
+            Gets the display text for the value rank attribute.
+            </summary>
+            <param name="accessLevel">The value rank.</param>
+            <returns>The value rank formatted as a string.</returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.GetAttributeDisplayText(Opc.Ua.Client.Session,System.UInt32,Opc.Ua.Variant)">
+            <summary>
+            Gets the display text for the specified attribute.
+            </summary>
+            <param name="session">The currently active session.</param>
+            <param name="attributeId">The id of the attribute.</param>
+            <param name="value">The value of the attribute.</param>
+            <returns>The attribute formatted as a string.</returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.DiscoverServers(Opc.Ua.ApplicationConfiguration)">
+            <summary>
+            Discovers the servers on the local machine.
+            </summary>
+            <param name="configuration">The configuration.</param>
+            <returns>A list of server urls.</returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.SelectEndpoint(System.String,System.Boolean)">
+            <summary>
+            Finds the endpoint that best matches the current settings.
+            </summary>
+            <param name="discoveryUrl">The discovery URL.</param>
+            <param name="useSecurity">if set to <c>true</c> select an endpoint that uses security.</param>
+            <returns>The best available endpoint.</returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.Browse(Opc.Ua.Client.Session,Opc.Ua.BrowseDescriptionCollection,System.Boolean)">
+            <summary>
+            Browses the address space and returns the references found.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="nodesToBrowse">The set of browse operations to perform.</param>
+            <param name="throwOnError">if set to <c>true</c> a exception will be thrown on an error.</param>
+            <returns>
+            The references found. Null if an error occurred.
+            </returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.FindEventType(Opc.Ua.Client.MonitoredItem,Opc.Ua.EventFieldList)">
+            <summary>
+            Finds the type of the event for the notification.
+            </summary>
+            <param name="monitoredItem">The monitored item.</param>
+            <param name="notification">The notification.</param>
+            <returns>The NodeId of the EventType.</returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.Browse(Opc.Ua.Client.Session,Opc.Ua.BrowseDescription,System.Boolean)">
+            <summary>
+            Browses the address space and returns the references found.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="nodeToBrowse">The NodeId for the starting node.</param>
+            <param name="throwOnError">if set to <c>true</c> a exception will be thrown on an error.</param>
+            <returns>
+            The references found. Null if an error occurred.
+            </returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.BrowseSuperTypes(Opc.Ua.Client.Session,Opc.Ua.NodeId,System.Boolean)">
+            <summary>
+            Browses the address space and returns all of the supertypes of the specified type node.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="typeId">The NodeId for a type node in the address space.</param>
+            <param name="throwOnError">if set to <c>true</c> a exception will be thrown on an error.</param>
+            <returns>
+            The references found. Null if an error occurred.
+            </returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.ConstructEvent(Opc.Ua.Client.Session,Opc.Ua.Client.MonitoredItem,Opc.Ua.EventFieldList,System.Collections.Generic.Dictionary{Opc.Ua.NodeId,System.Type},System.Collections.Generic.Dictionary{Opc.Ua.NodeId,Opc.Ua.NodeId})">
+            <summary>
+            Constructs an event object from a notification.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="monitoredItem">The monitored item that produced the notification.</param>
+            <param name="notification">The notification.</param>
+            <param name="knownEventTypes">The known event types.</param>
+            <param name="eventTypeMappings">Mapping between event types and known event types.</param>
+            <returns>
+            The event object. Null if the notification is not a valid event type.
+            </returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.TranslateBrowsePaths(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.NamespaceTable,System.String[])">
+            <summary>
+            Returns the node ids for a set of relative paths.
+            </summary>
+            <param name="session">An open session with the server to use.</param>
+            <param name="startNodeId">The starting node for the relative paths.</param>
+            <param name="namespacesUris">The namespace URIs referenced by the relative paths.</param>
+            <param name="relativePaths">The relative paths.</param>
+            <returns>A collection of local nodes.</returns>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.CollectFieldsForType(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.SimpleAttributeOperandCollection,System.Collections.Generic.List{Opc.Ua.NodeId})">
+            <summary>
+            Collects the fields for the type.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="eventTypeId">The type id.</param>
+            <param name="fields">The fields.</param>
+            <param name="fieldNodeIds">The node id for the declaration of the field.</param>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.CollectFieldsForInstance(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.SimpleAttributeOperandCollection,System.Collections.Generic.List{Opc.Ua.NodeId})">
+            <summary>
+            Collects the fields for the instance.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="eventTypeId">The instance id.</param>
+            <param name="fields">The fields.</param>
+            <param name="fieldNodeIds">The node id for the declaration of the field.</param>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.CollectFields(Opc.Ua.Client.Session,Opc.Ua.NodeId,Opc.Ua.QualifiedNameCollection,Opc.Ua.SimpleAttributeOperandCollection,System.Collections.Generic.List{Opc.Ua.NodeId},System.Collections.Generic.Dictionary{Opc.Ua.NodeId,Opc.Ua.QualifiedNameCollection})">
+            <summary>
+            Collects the fields for the instance node.
+            </summary>
+            <param name="session">The session.</param>
+            <param name="nodeId">The node id.</param>
+            <param name="parentPath">The parent path.</param>
+            <param name="fields">The event fields.</param>
+            <param name="fieldNodeIds">The node id for the declaration of the field.</param>
+            <param name="foundNodes">The table of found nodes.</param>
+        </member>
+        <member name="M:OpcUaHelper.FormUtils.ContainsPath(Opc.Ua.SimpleAttributeOperandCollection,Opc.Ua.QualifiedNameCollection)">
+            <summary>
+            Determines whether the specified select clause contains the browse path.
+            </summary>
+            <param name="selectClause">The select clause.</param>
+            <param name="browsePath">The browse path.</param>
+            <returns>
+            	<c>true</c> if the specified select clause contains path; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:OpcUaHelper.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Culture">
+            <summary>
+              重写当前线程的 CurrentUICulture 属性
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Activity_16xLG">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.brackets_Square_16xMD">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Class_489">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.ClassIcon">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Cloud_16xLG">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Copy_6524">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Delegate_8339">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.docview_xaml_on_16x16">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Enum_582">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Event_594">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Event_594_exp">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.glasses_16xLG">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.grid_Data_16xLG">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.lightningBolt_16xLG">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.ListView_687">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.loading">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Method_636">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Module_648">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Structure_507">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Table_748">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.Tag_7213">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.usbcontroller">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="P:OpcUaHelper.Properties.Resources.VirtualMachine">
+            <summary>
+              查找 System.Drawing.Bitmap 类型的本地化资源。
+            </summary>
+        </member>
+        <member name="T:jkType.JKTYPE.CartesianTran">
+            @brief Cartesian spatial location data type
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.CartesianTran.y" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.CartesianTran.z" -->
+        <member name="T:jkType.JKTYPE.Rpy">
+            @brief Euler Angle Attitude Data Type
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.Rpy.ry" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.Rpy.rz" -->
+        <member name="T:jkType.JKTYPE.Quaternion">
+            @brief Quaternion Gesture Data Type
+        </member>
+        <member name="T:jkType.JKTYPE.CartesianPose">
+            @brief Cartesian space position type
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.CartesianPose.rpy" -->
+        <member name="T:jkType.JKTYPE.RotMatrix">
+            @brief Rotated Matrix Data Types
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RotMatrix.y" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RotMatrix.z" -->
+        <member name="T:jkType.JKTYPE.ProgramState">
+            @brief Program operation status enumeration type
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.ProgramState.PROGRAM_RUNNING" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.ProgramState.PROGRAM_PAUSED" -->
+        <member name="T:jkType.JKTYPE.FTFrameType">
+            @brief Foce control enumeration type
+        </member>
+        <member name="T:jkType.JKTYPE.CoordType">
+            @brief Coordinate system selection enumeration type
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.CoordType.COORD_JOINT" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.CoordType.COORD_TOOL" -->
+        <member name="T:jkType.JKTYPE.MoveMode">
+            @brief movement pattern enumeration
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.MoveMode.INCR" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.MoveMode.CONTINUE" -->
+        <member name="T:jkType.JKTYPE.PayLoad">
+            @brief load data type
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.PayLoad.centroid" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.PayLoad.payload_id" -->
+        <member name="T:jkType.JKTYPE.JointValue">
+            @brief Joint position
+        </member>
+        <member name="T:jkType.JKTYPE.IOType">
+            @brief IO type enum
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.IOType.IO_TOOL" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.IOType.IO_EXTEND" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.IOType.IO_REALY" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.IOType.IO_MODBUS_SLAVE" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.IOType.IO_PROFINET_SLAVE" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.IOType.IO_EIP_SLAVE" -->
+        <member name="T:jkType.JKTYPE.DOInfo">
+            @brief DO info
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.DOInfo.index" -->
+        <member name="T:jkType.JKTYPE.TorqueValue">
+            @brief robot torque data
+        </member>
+        <member name="T:jkType.JKTYPE.UserVariable">
+            @brief Controller User Variable Struct
+            @param id controller inner usage
+            @param value value type always double
+            @param alias variable alias which is less than 100 bytes
+        </member>
+        <member name="T:jkType.JKTYPE.UserVariableList">
+            @brief number of UserVariable is fixed to 100
+        </member>
+        <member name="T:jkType.JKTYPE.RobotStatus">
+            @brief robot status data
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.inpos" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.powered_on" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.enabled" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.rapidrate" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.protective_stop" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.emergency_stop" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.dout" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.din" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.ain" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.aout" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.tio_dout" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.tio_din" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.tio_ain" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.tio_key" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.extio" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.modbus_slave" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.profinet_slave" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.eip_slave" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.current_tool_id" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.cartesiantran_position" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.joint_position" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.on_soft_limit" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.current_user_id" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.drag_status" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.robot_monitor_data" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.torq_sensor_monitor_data" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus.is_socket_connect" -->
+        <member name="T:jkType.JKTYPE.TrajTrackPara">
+            @brief TRAJ function config
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.TrajTrackPara.rpy_interval" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.TrajTrackPara.vel" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.TrajTrackPara.acc" -->
+        <member name="T:jkType.JKTYPE.OptionalCond">
+            @brief not used
+        </member>
+        <member name="T:jkType.JKTYPE.AdmitCtrlType">
+            @brief admittance config param
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.AdmitCtrlType.ft_user" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.AdmitCtrlType.ft_rebound" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.AdmitCtrlType.ft_constant" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.AdmitCtrlType.ft_normal_track" -->
+        <member name="T:jkType.JKTYPE.RobotAdmitCtrl">
+            @brief robot admittance control configs collection
+        </member>
+        <member name="T:jkType.JKTYPE.VelCom">
+            @brief velocity force control setting
+            there are 3 levels to set，and 1>rate1>rate2>rate3>rate4>0
+            at level 1，able to set rate1,rate2。rate3 and rate4, both are 0
+            at level 2，able to set rate1,rate2，rate3. rate4 is 0
+            at level 3，able to set rate1,rate2，rate3,rate4
+        </member>
+        <member name="T:jkType.JKTYPE.FTxyz">
+            @brief force control components
+        </member>
+        <member name="T:jkType.JKTYPE.VelocityLimit">
+            @brief velocity limit for force control
+        </member>
+        <member name="T:jkType.JKTYPE.FTSensorBasicInfo">
+            @brief Basic information of force-torque sensor
+        </member>
+        <member name="T:jkType.JKTYPE.FTSensorBasicInfoStr">
+            @brief Collection of force-torque sensor basic information
+        </member>
+        <member name="T:jkType.JKTYPE.FTSensorSoftLimitRule">
+            @brief Force-torque sensor soft limit rule
+        </member>
+        <member name="T:jkType.JKTYPE.FTSensorSoftLimitRuleStr">
+            @brief Collection of force-torque sensor soft limit rules
+        </member>
+        <member name="T:jkType.JKTYPE.FTLinkedSensorIDStr">
+            @brief Linked force-torque sensor IDs
+        </member>
+        <member name="T:jkType.JKTYPE.FTSensorThresholdStr">
+            @brief Force-torque sensor threshold structure
+        </member>
+        <member name="T:jkType.JKTYPE.FTSensorDataStr">
+            @brief Force-torque sensor data structure
+        </member>
+        <member name="T:jkType.JKTYPE.FTSensorConfigStr">
+            @brief Force-torque sensor configuration structure
+        </member>
+        <member name="T:jkType.JKTYPE.DHParam">
+            @brief DH
+        </member>
+        <member name="T:jkType.JKTYPE.TorqSensorData">
+            @brief torque sensor data
+        </member>
+        <member name="T:jkType.JKTYPE.ToolDriveConfig">
+            @brief tool drive config
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.ToolDriveConfig.axis" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.ToolDriveConfig.rebound" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.ToolDriveConfig.rigidity" -->
+        <member name="T:jkType.JKTYPE.RobotToolDriveCtrl">
+            @brief 
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus_simple.errmsg" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus_simple.powered_on" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotStatus_simple.enabled" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.ProcessType.MOT_PAUSE" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.ProcessType.MOT_ABORT" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.ErrorCode.message" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.ProgramInfo.motion_line" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.ProgramInfo.file" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.ProgramInfo.program_state" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.MultStrStorType.name" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.Io_group.dout" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.Io_group.ain" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.Io_group.aout" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.JointMonitorData.instVoltage" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.JointMonitorData.instTemperature" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.JointMonitorData.instVel" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.JointMonitorData.instTorq" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotMonitorData.scbMinorVersion" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotMonitorData.cabTemperature" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotMonitorData.robotAveragePower" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotMonitorData.robotAverageCurrent" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.RobotMonitorData.jointMonitorData" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.TorqSensorMonitorData.port" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.TorqSensorMonitorData.payLoad" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.TorqSensorMonitorData.status" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.TorqSensorMonitorData.errcode" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.TorqSensorMonitorData.actTorque" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.TorqSensorMonitorData.torque" -->
+        <!-- Badly formed XML comment ignored for member "F:jkType.JKTYPE.TorqSensorMonitorData.realTorque" -->
+    </members>
+</doc>

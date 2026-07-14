@@ -1,0 +1,397 @@
+- generic [ref=f2e3]:
+  - generic [ref=f2e4]:
+    - generic [ref=f2e5]:
+      - img "logo" [ref=f2e6] [cursor=pointer]
+      - generic [ref=f2e7]:
+        - generic [ref=f2e8]: 
+        - generic [ref=f2e11] [cursor=pointer]: 
+        - generic [ref=f2e14] [cursor=pointer]: 
+        - generic [ref=f2e15] [cursor=pointer]: 
+      - generic [ref=f2e18]:
+        - generic [ref=f2e19]: 布局
+        - generic [ref=f2e20]: 建模
+        - generic [ref=f2e21]: 编程
+        - generic [ref=f2e22]: 通信
+    - generic [ref=f2e23]: test
+    - generic [ref=f2e24] [cursor=pointer]: 4.3.7
+  - generic [ref=f2e29]:
+    - generic [ref=f2e30]:
+      - generic [ref=f2e487] [cursor=pointer]:
+        - generic [ref=f2e488]: 添加看板
+        - paragraph
+      - generic [ref=f2e489] [cursor=pointer]:
+        - generic [ref=f2e490]: 保存组件
+        - paragraph
+      - generic [ref=f2e491] [cursor=pointer]:
+        - generic [ref=f2e492]: 删除
+        - paragraph
+      - generic [ref=f2e493] [cursor=pointer]:
+        - generic [ref=f2e494]: 复制
+        - paragraph
+      - generic:
+        - generic: 粘贴
+        - paragraph
+      - generic [ref=f2e495] [cursor=pointer]:
+        - generic [ref=f2e496]: 阵列
+        - paragraph
+      - generic:
+        - generic: 合成
+        - paragraph
+      - generic [ref=f2e38] [cursor=pointer]:
+        - generic [ref=f2e40]: 选择
+        - paragraph
+      - generic [ref=f2e41] [cursor=pointer]:
+        - generic [ref=f2e43]: 移动
+        - paragraph
+      - generic [ref=f2e44] [cursor=pointer]:
+        - generic [ref=f2e46]: 旋转
+        - paragraph
+      - generic [ref=f2e47] [cursor=pointer]:
+        - generic [ref=f2e49]: 操作
+        - paragraph
+      - generic [ref=f2e50] [cursor=pointer]:
+        - generic [ref=f2e52]: 拼合
+        - paragraph
+      - generic [ref=f2e53] [cursor=pointer]:
+        - generic [ref=f2e55]: 测量
+        - paragraph
+      - generic [ref=f2e497] [cursor=pointer]:
+        - generic [ref=f2e498]: 捕捉
+        - paragraph
+      - generic [ref=f2e499] [cursor=pointer]:
+        - generic [ref=f2e500]: 对齐
+        - paragraph
+      - generic [ref=f2e501] [cursor=pointer]:
+        - generic [ref=f2e502]: 附加
+        - paragraph
+      - generic:
+        - generic: 分离
+        - paragraph
+      - generic [ref=f2e60] [cursor=pointer]:
+        - generic [ref=f2e62]: 信号连接
+        - paragraph
+      - generic [ref=f2e63] [cursor=pointer]:
+        - generic [ref=f2e65]: 接口连接
+        - paragraph
+      - generic [ref=f2e66] [cursor=pointer]:
+        - generic [ref=f2e68]: 公共变量
+        - paragraph
+      - generic [ref=f2e69] [cursor=pointer]:
+        - generic [ref=f2e71]: 异常设置
+        - paragraph
+    - generic [ref=f2e72]:
+      - generic [ref=f2e73]:
+        - generic [ref=f2e74]: 尺寸
+        - textbox [disabled] [ref=f2e75]: "100"
+        - generic [ref=f2e76]: mm
+      - generic [ref=f2e77]:
+        - generic [ref=f2e78]: 角度
+        - textbox [disabled] [ref=f2e79]: "45"
+        - generic [ref=f2e80]: °
+    - generic [ref=f2e81]:
+      - generic [ref=f2e82] [cursor=pointer]:
+        - generic [ref=f2e83]:
+          - checkbox "自动尺寸" [checked]
+        - generic [ref=f2e85]: 自动尺寸
+      - generic [ref=f2e86] [cursor=pointer]:
+        - generic [ref=f2e87]:
+          - checkbox "始终捕捉"
+        - generic [ref=f2e89]: 始终捕捉
+    - generic [ref=f2e90]:
+      - generic [ref=f2e91] [cursor=pointer]:
+        - generic [ref=f2e92]:
+          - checkbox "布局时启用"
+        - generic [ref=f2e94]: 布局时启用
+      - generic [ref=f2e95] [cursor=pointer]:
+        - generic [ref=f2e96]:
+          - checkbox "仿真时启用"
+        - generic [ref=f2e98]: 仿真时启用
+      - generic [ref=f2e99] [cursor=pointer]:
+        - generic [ref=f2e100]:
+          - checkbox "碰撞后停止仿真"
+        - generic [ref=f2e102]: 碰撞后停止仿真
+    - generic [ref=f2e103]:
+      - generic [ref=f2e104]:
+        - text: 仿真时检测频率(帧)
+        - spinbutton [ref=f2e107]: "10"
+      - generic [ref=f2e108]:
+        - button "检测组1" [ref=f2e109] [cursor=pointer]
+        - button "检测组2" [ref=f2e110] [cursor=pointer]
+  - generic:
+    - generic:
+      - text: 
+      - generic [ref=f2e200]:
+        - generic [ref=f2e201]:
+          - button [ref=f2e202] [cursor=pointer]
+          - generic [ref=f2e203]:
+            - tablist [ref=f2e207]:
+              - tab "模型资源管理器" [selected] [ref=f2e208]
+              - tab "场景资源管理器" [ref=f2e209]
+            - tabpanel "模型资源管理器" [ref=f2e211]:
+              - generic [ref=f2e212]:
+                - generic [ref=f2e215]:
+                  - generic [ref=f2e216]:
+                    - textbox "搜索" [ref=f2e217]
+                    - generic: 
+                  - generic [ref=f2e220]:
+                    - tree [ref=f2e221]:
+                      - treeitem " 我的收藏 " [ref=f2e222]:
+                        - generic [ref=f2e223] [cursor=pointer]:
+                          - generic [ref=f2e224]: 
+                          - generic [ref=f2e225]:
+                            - generic [ref=f2e226]: 我的收藏
+                            - generic [ref=f2e228]:
+                              - text: 
+                              - generic [ref=f2e229]: 
+                    - generic [ref=f2e231]:
+                      - generic [ref=f2e232] [cursor=pointer]: 公共
+                      - generic [ref=f2e233] [cursor=pointer]: 私有
+                      - generic [ref=f2e234] [cursor=pointer]: 团队
+                    - radiogroup [ref=f2e235]:
+                      - radio "品牌" [checked] [ref=f2e236] [cursor=pointer]:
+                        - radio [checked] [ref=f2e239]
+                      - radio "类型" [ref=f2e241] [cursor=pointer]:
+                        - radio [ref=f2e244]
+                    - tree [ref=f2e246]:
+                      - treeitem " ABB" [ref=f2e247]:
+                        - generic [ref=f2e248] [cursor=pointer]:
+                          - generic [ref=f2e249]: 
+                          - generic [ref=f2e250]: ABB
+                      - treeitem " Adept" [ref=f2e251]:
+                        - generic [ref=f2e252] [cursor=pointer]:
+                          - generic [ref=f2e253]: 
+                          - generic [ref=f2e254]: Adept
+                      - treeitem " AUBO" [ref=f2e255]:
+                        - generic [ref=f2e256] [cursor=pointer]:
+                          - generic [ref=f2e257]: 
+                          - generic [ref=f2e258]: AUBO
+                      - treeitem " Colchester" [ref=f2e259]:
+                        - generic [ref=f2e260] [cursor=pointer]:
+                          - generic [ref=f2e261]: 
+                          - generic [ref=f2e262]: Colchester
+                      - treeitem " Denso" [ref=f2e263]:
+                        - generic [ref=f2e264] [cursor=pointer]:
+                          - generic [ref=f2e265]: 
+                          - generic [ref=f2e266]: Denso
+                      - treeitem " DOBOT" [ref=f2e267]:
+                        - generic [ref=f2e268] [cursor=pointer]:
+                          - generic [ref=f2e269]: 
+                          - generic [ref=f2e270]: DOBOT
+                      - treeitem " EFORT" [ref=f2e271]:
+                        - generic [ref=f2e272] [cursor=pointer]:
+                          - generic [ref=f2e273]: 
+                          - generic [ref=f2e274]: EFORT
+                      - treeitem " Epson" [ref=f2e275]:
+                        - generic [ref=f2e276] [cursor=pointer]:
+                          - generic [ref=f2e277]: 
+                          - generic [ref=f2e278]: Epson
+                      - treeitem " ESTUN" [ref=f2e279]:
+                        - generic [ref=f2e280] [cursor=pointer]:
+                          - generic [ref=f2e281]: 
+                          - generic [ref=f2e282]: ESTUN
+                      - treeitem " Fanuc" [ref=f2e283]:
+                        - generic [ref=f2e284] [cursor=pointer]:
+                          - generic [ref=f2e285]: 
+                          - generic [ref=f2e286]: Fanuc
+                      - treeitem " FDSim" [ref=f2e287]:
+                        - generic [ref=f2e288] [cursor=pointer]:
+                          - generic [ref=f2e289]: 
+                          - generic [ref=f2e290]: FDSim
+                      - treeitem " FEELER" [ref=f2e291]:
+                        - generic [ref=f2e292] [cursor=pointer]:
+                          - generic [ref=f2e293]: 
+                          - generic [ref=f2e294]: FEELER
+                      - treeitem " Goodway" [ref=f2e295]:
+                        - generic [ref=f2e296] [cursor=pointer]:
+                          - generic [ref=f2e297]: 
+                          - generic [ref=f2e298]: Goodway
+                      - treeitem " GreenTrans" [ref=f2e299]:
+                        - generic [ref=f2e300] [cursor=pointer]:
+                          - generic [ref=f2e301]: 
+                          - generic [ref=f2e302]: GreenTrans
+                      - treeitem " Hurco" [ref=f2e303]:
+                        - generic [ref=f2e304] [cursor=pointer]:
+                          - generic [ref=f2e305]: 
+                          - generic [ref=f2e306]: Hurco
+                      - treeitem " JAKA" [ref=f2e307]:
+                        - generic [ref=f2e308] [cursor=pointer]:
+                          - generic [ref=f2e309]: 
+                          - generic [ref=f2e310]: JAKA
+                      - treeitem " KUKA" [ref=f2e311]:
+                        - generic [ref=f2e312] [cursor=pointer]:
+                          - generic [ref=f2e313]: 
+                          - generic [ref=f2e314]: KUKA
+                      - treeitem " MIR" [ref=f2e315]:
+                        - generic [ref=f2e316] [cursor=pointer]:
+                          - generic [ref=f2e317]: 
+                          - generic [ref=f2e318]: MIR
+                      - treeitem " Mobile Industrial Robots" [ref=f2e319]:
+                        - generic [ref=f2e320] [cursor=pointer]:
+                          - generic [ref=f2e321]: 
+                          - generic [ref=f2e322]: Mobile Industrial Robots
+                      - treeitem " NPL" [ref=f2e323]:
+                        - generic [ref=f2e324] [cursor=pointer]:
+                          - generic [ref=f2e325]: 
+                          - generic [ref=f2e326]: NPL
+                      - treeitem " OMRON" [ref=f2e327]:
+                        - generic [ref=f2e328] [cursor=pointer]:
+                          - generic [ref=f2e329]: 
+                          - generic [ref=f2e330]: OMRON
+                      - treeitem " OnRobot" [ref=f2e331]:
+                        - generic [ref=f2e332] [cursor=pointer]:
+                          - generic [ref=f2e333]: 
+                          - generic [ref=f2e334]: OnRobot
+                      - treeitem " OTTO Motors" [ref=f2e335]:
+                        - generic [ref=f2e336] [cursor=pointer]:
+                          - generic [ref=f2e337]: 
+                          - generic [ref=f2e338]: OTTO Motors
+                      - treeitem " RGK" [ref=f2e339]:
+                        - generic [ref=f2e340] [cursor=pointer]:
+                          - generic [ref=f2e341]: 
+                          - generic [ref=f2e342]: RGK
+                      - treeitem " Seer Robotics" [ref=f2e343]:
+                        - generic [ref=f2e344] [cursor=pointer]:
+                          - generic [ref=f2e345]: 
+                          - generic [ref=f2e346]: Seer Robotics
+                      - treeitem " Siasun" [ref=f2e347]:
+                        - generic [ref=f2e348] [cursor=pointer]:
+                          - generic [ref=f2e349]: 
+                          - generic [ref=f2e350]: Siasun
+                      - treeitem " TAOBotics" [ref=f2e351]:
+                        - generic [ref=f2e352] [cursor=pointer]:
+                          - generic [ref=f2e353]: 
+                          - generic [ref=f2e354]: TAOBotics
+                      - treeitem " TECHMAN" [ref=f2e355]:
+                        - generic [ref=f2e356] [cursor=pointer]:
+                          - generic [ref=f2e357]: 
+                          - generic [ref=f2e358]: TECHMAN
+                      - treeitem " Tongtai" [ref=f2e359]:
+                        - generic [ref=f2e360] [cursor=pointer]:
+                          - generic [ref=f2e361]: 
+                          - generic [ref=f2e362]: Tongtai
+                      - treeitem " Turin" [ref=f2e363]:
+                        - generic [ref=f2e364] [cursor=pointer]:
+                          - generic [ref=f2e365]: 
+                          - generic [ref=f2e366]: Turin
+                      - treeitem " UR" [expanded] [ref=f2e367]:
+                        - generic [ref=f2e368] [cursor=pointer]:
+                          - generic [ref=f2e369]: 
+                          - generic [ref=f2e370]: UR
+                        - group [ref=f2e472]:
+                          - treeitem " 机器人" [ref=f2e473]:
+                            - generic [ref=f2e474] [cursor=pointer]:
+                              - generic [ref=f2e475]: 
+                              - generic [ref=f2e476]: 机器人
+                      - treeitem " 三菱" [ref=f2e371]:
+                        - generic [ref=f2e372] [cursor=pointer]:
+                          - generic [ref=f2e373]: 
+                          - generic [ref=f2e374]: 三菱
+                      - treeitem " 因时机器人" [ref=f2e375]:
+                        - generic [ref=f2e376] [cursor=pointer]:
+                          - generic [ref=f2e377]: 
+                          - generic [ref=f2e378]: 因时机器人
+                      - treeitem " 增广智能科技" [ref=f2e379]:
+                        - generic [ref=f2e380] [cursor=pointer]:
+                          - generic [ref=f2e381]: 
+                          - generic [ref=f2e382]: 增广智能科技
+                      - treeitem " 大寰机器人" [ref=f2e383]:
+                        - generic [ref=f2e384] [cursor=pointer]:
+                          - generic [ref=f2e385]: 
+                          - generic [ref=f2e386]: 大寰机器人
+                      - treeitem " 小米" [ref=f2e387]:
+                        - generic [ref=f2e388] [cursor=pointer]:
+                          - generic [ref=f2e389]: 
+                          - generic [ref=f2e390]: 小米
+                      - treeitem " 工厂5S标识" [ref=f2e391]:
+                        - generic [ref=f2e392] [cursor=pointer]:
+                          - generic [ref=f2e393]: 
+                          - generic [ref=f2e394]: 工厂5S标识
+                      - treeitem " 慧灵科技" [ref=f2e395]:
+                        - generic [ref=f2e396] [cursor=pointer]:
+                          - generic [ref=f2e397]: 
+                          - generic [ref=f2e398]: 慧灵科技
+                      - treeitem " 沈阳机床" [ref=f2e399]:
+                        - generic [ref=f2e400] [cursor=pointer]:
+                          - generic [ref=f2e401]: 
+                          - generic [ref=f2e402]: 沈阳机床
+                      - treeitem " 海尔" [ref=f2e403]:
+                        - generic [ref=f2e404] [cursor=pointer]:
+                          - generic [ref=f2e405]: 
+                          - generic [ref=f2e406]: 海尔
+                      - treeitem " 海康威视" [ref=f2e407]:
+                        - generic [ref=f2e408] [cursor=pointer]:
+                          - generic [ref=f2e409]: 
+                          - generic [ref=f2e410]: 海康威视
+                      - treeitem " 知行机器人" [ref=f2e411]:
+                        - generic [ref=f2e412] [cursor=pointer]:
+                          - generic [ref=f2e413]: 
+                          - generic [ref=f2e414]: 知行机器人
+                      - treeitem " 通快" [ref=f2e415]:
+                        - generic [ref=f2e416] [cursor=pointer]:
+                          - generic [ref=f2e417]: 
+                          - generic [ref=f2e418]: 通快
+                      - treeitem " 钧舵机器人" [ref=f2e419]:
+                        - generic [ref=f2e420] [cursor=pointer]:
+                          - generic [ref=f2e421]: 
+                          - generic [ref=f2e422]: 钧舵机器人
+                      - treeitem " 非标" [ref=f2e423]:
+                        - generic [ref=f2e424] [cursor=pointer]:
+                          - generic [ref=f2e425]: 
+                          - generic [ref=f2e426]: 非标
+                - generic [ref=f2e430]: 1个模型
+                - generic [ref=f2e478]:
+                  - paragraph [ref=f2e484]: UR5
+                  - generic [ref=f2e485]: 
+        - list [ref=f2e438]:
+          - listitem [ref=f2e439] [cursor=pointer]
+          - listitem [ref=f2e442] [cursor=pointer]:
+            - generic [ref=f2e443]: 
+          - listitem [ref=f2e444] [cursor=pointer]:
+            - generic [ref=f2e445]: 
+          - listitem [ref=f2e446] [cursor=pointer]:
+            - generic [ref=f2e447]: 
+          - listitem [ref=f2e448] [cursor=pointer]
+          - listitem [ref=f2e451] [cursor=pointer]
+          - listitem [ref=f2e454] [cursor=pointer]
+          - listitem [ref=f2e457] [cursor=pointer]
+          - listitem [ref=f2e460] [cursor=pointer]
+          - listitem [ref=f2e463] [cursor=pointer]
+          - listitem [ref=f2e466] [cursor=pointer]
+          - listitem [ref=f2e469] [cursor=pointer]
+    - generic: 
+  - generic [ref=f2e118]:
+    - generic [ref=f2e119]:
+      - generic [ref=f2e120]: "FPS:"
+      - generic [ref=f2e121]: "1"
+    - generic [ref=f2e122]:
+      - generic [ref=f2e123]: "mb:"
+      - generic [ref=f2e124]: "113"
+  - generic [ref=f2e128]:
+    - list [ref=f2e129]:
+      - listitem [ref=f2e130] [cursor=pointer]: 场景
+      - listitem [ref=f2e131] [cursor=pointer]:
+        - generic [ref=f2e132]: 
+      - listitem [ref=f2e133] [cursor=pointer]:
+        - generic [ref=f2e134]: 
+      - listitem [ref=f2e135] [cursor=pointer]:
+        - generic [ref=f2e136]: 
+      - listitem [ref=f2e137] [cursor=pointer]:
+        - generic [ref=f2e138]: 
+      - listitem [ref=f2e139] [cursor=pointer]
+      - listitem [ref=f2e142] [cursor=pointer]
+    - list [ref=f2e145]:
+      - listitem [ref=f2e146]
+      - listitem [ref=f2e149]
+      - listitem [ref=f2e152]
+      - listitem [ref=f2e155]
+  - generic [ref=f2e158]:
+    - generic [ref=f2e159] [cursor=pointer]: 
+    - generic [ref=f2e160] [cursor=pointer]: 
+    - generic [ref=f2e161] [cursor=pointer]: 
+    - generic [ref=f2e162]:
+      - generic [ref=f2e163]: "00"
+      - generic [ref=f2e164]: :00
+      - generic [ref=f2e165]: :00
+    - generic [ref=f2e166]:
+      - generic [ref=f2e167]: "实时:"
+      - generic [ref=f2e170] [cursor=pointer]: x 1

@@ -1,0 +1,38 @@
+﻿2026-05-06 14:03:30.300   [INFO]   Websocket客户端  和示教器：192.168.56.102建立连接成功
+2026-05-06 14:03:30.400   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-05-06 14:04:06.010   [INFO]   Websocket客户端  场景：E009FF2C-1C2A-484F-845B-08529DCE154B，用户：19 运行。
+2026-05-06 14:08:35.894   [INFO]   Websocket客户端  场景：E009FF2C-1C2A-484F-845B-08529DCE154B，用户：19 重置。
+2026-05-06 14:09:58.997   [WARN]   Websocket服务端  断开和ws服务器:ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B的连接。
+2026-05-06 14:10:00.459   [INFO]   Websocket客户端  和示教器：192.168.56.102建立连接成功
+2026-05-06 14:10:00.539   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-05-06 14:11:13.185   [INFO]   Websocket客户端  场景：E009FF2C-1C2A-484F-845B-08529DCE154B，用户：19 运行。
+2026-05-06 14:14:16.712   [INFO]   Websocket客户端  场景：E009FF2C-1C2A-484F-845B-08529DCE154B，用户：19 重置。
+2026-05-06 14:36:42.941   [WARN]   Websocket客户端  2026/5/6 14:36:42 和示教器：192.168.56.102建立连接失败:请检查ip地址是否正确。
+2026-05-06 14:36:42.969   [INFO]   Websocket服务端  Websocket服务器启动成功：ws://localhost:8068
+2026-05-06 14:36:52.250   [INFO]   Websocket服务端  停止ws服务器:ws://localhost:8068。
+2026-05-06 14:36:52.257   [INFO]   Websocket服务端  Websocket服务器：ws://localhost:8068已关闭。
+2026-05-06 14:38:41.147   [INFO]   Websocket客户端  和示教器：192.168.56.102建立连接成功
+2026-05-06 14:38:41.193   [INFO]   Websocket服务端  Websocket服务器启动成功：ws://localhost:8068
+2026-05-06 14:38:46.591   [INFO]   Websocket服务端  Websocket客户端：1c7eafcbc9444ac59490d9dbbadb261d 连接成功。
+2026-05-06 14:38:46.670   [WARN]   Websocket服务端  Websocket客户端：1c7eafcbc9444ac59490d9dbbadb261d 断开连接,原因：
+2026-05-06 14:38:46.720   [ERROR]   Websocket服务端  Websocket客户端：1c7eafcbc9444ac59490d9dbbadb261d 报错：
+2026-05-06 14:38:50.756   [INFO]   Websocket服务端  Websocket客户端：756f0fb366934e788f18a38d631af85f 连接成功。
+2026-05-06 14:40:02.107   [WARN]   Websocket服务端  Websocket客户端：756f0fb366934e788f18a38d631af85f 断开连接,原因：
+2026-05-06 14:41:03.538   [INFO]   Websocket服务端  Websocket客户端：15543cf29ec044dca3f044d50d1f2d94 连接成功。
+2026-05-06 15:37:27.519   [INFO]   Websocket客户端  和示教器：192.168.56.102建立连接成功
+2026-05-06 15:37:27.614   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-05-06 15:37:51.188   [WARN]   Websocket服务端  断开和ws服务器:ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B的连接。
+2026-05-06 15:37:53.740   [INFO]   Websocket客户端  和示教器：192.168.56.102建立连接成功
+2026-05-06 15:38:04.935   [INFO]   Websocket服务端  Websocket服务器启动成功：ws://localhost:8068
+2026-05-06 15:38:15.443   [INFO]   Websocket服务端  Websocket客户端：9f0aa5423dd74b93b476a34f697bfe50 连接成功。
+2026-05-06 15:38:15.496   [WARN]   Websocket服务端  Websocket客户端：9f0aa5423dd74b93b476a34f697bfe50 断开连接,原因：
+2026-05-06 15:38:18.251   [INFO]   Websocket服务端  Websocket客户端：6b25cdb73a044fdf85b24360bb3d8dc6 连接成功。
+2026-05-06 15:39:41.982   [INFO]   Websocket客户端  和示教器：192.168.56.102建立连接成功
+2026-05-06 15:39:42.012   [INFO]   Websocket服务端  Websocket服务器启动成功：ws://localhost:8068
+2026-05-06 15:39:49.247   [INFO]   Websocket服务端  Websocket客户端：146745dc8cea4148ab06751e2af67310 连接成功。
+2026-05-06 15:39:49.286   [WARN]   Websocket服务端  Websocket客户端：146745dc8cea4148ab06751e2af67310 断开连接,原因：
+2026-05-06 15:39:52.016   [INFO]   Websocket服务端  Websocket客户端：4962a5162a8841be91422e9a5e63a4c8 连接成功。
+2026-05-06 16:57:44.610   [INFO]   Websocket客户端  和示教器：192.168.146.129建立连接成功
+2026-05-06 16:57:44.729   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。
+2026-05-06 16:58:42.948   [INFO]   Websocket客户端  和示教器：192.168.146.129建立连接成功
+2026-05-06 16:59:21.172   [INFO]   Websocket客户端  连接Websocket服务端：ws://api.fdsim.com/dbiServer/opc/websocket/client/E009FF2C-1C2A-484F-845B-08529DCE154B 成功。

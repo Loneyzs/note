@@ -1,0 +1,79 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - generic [ref=e5]:
+      - link "首页" [ref=e7] [cursor=pointer]:
+        - /url: /
+      - link "在线开发" [ref=e10] [cursor=pointer]:
+        - /url: /projectCenter?asyncRoute=projectList
+      - link "帮助" [ref=e13] [cursor=pointer]:
+        - /url: /document/
+      - link "反馈" [ref=e15] [cursor=pointer]:
+        - /url: /Help/Feedback
+    - img "头像" [ref=e22] [cursor=pointer]
+  - generic [ref=e23]:
+    - list [ref=e25]:
+      - listitem [ref=e26]:
+        - generic [ref=e28] [cursor=pointer]:
+          - generic [ref=e29]: 
+          - text: 团队设置
+      - listitem [ref=e30]:
+        - generic [ref=e32] [cursor=pointer]:
+          - generic [ref=e33]: 
+          - text: 项目列表
+      - listitem [ref=e34]:
+        - generic [ref=e36] [cursor=pointer]:
+          - generic [ref=e37]: 
+          - text: 资源管理
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42] [cursor=pointer]: 新建
+          - generic [ref=e44] [cursor=pointer]: 新建文件夹
+        - generic [ref=e46]:
+          - textbox "请输入关键字" [ref=e47]
+          - text: 
+      - generic [ref=e48]:
+        - generic [ref=e50]:
+          - generic [ref=e51] [cursor=pointer]: 公共案例
+          - generic [ref=e53] [cursor=pointer]: 全部项目
+          - generic [ref=e55] [cursor=pointer]: 个人项目
+          - generic [ref=e57] [cursor=pointer]: 我创建的团队
+          - generic [ref=e59] [cursor=pointer]: 我加入的团队
+        - generic [ref=e61]:
+          - generic [ref=e62]:
+            - generic [ref=e63]:
+              - generic [ref=e64]:
+                - generic [ref=e65]: 
+                - text: 文件夹(3)
+              - generic [ref=e66]: 全部项目
+            - generic [ref=e69]:
+              - generic [ref=e70] [cursor=pointer]: 项目总览
+              - generic [ref=e72] [cursor=pointer]: 未分类
+              - generic [ref=e74] [cursor=pointer]:
+                - generic [ref=e75]: ican
+                - text: 
+          - generic [ref=e80]:
+            - generic [ref=e85]:
+              - generic [ref=e86]: PLC颜色分拣识别虚拟调试分享版(c)
+              - generic [ref=e87]:
+                - generic "预览" [ref=e88] [cursor=pointer]: 
+                - generic [ref=e89]:
+                  - text:    
+                  - generic [ref=e90]: 
+            - generic [ref=e96]:
+              - generic [ref=e97]: test
+              - generic [ref=e98]:
+                - generic "预览" [ref=e99] [cursor=pointer]: 
+                - generic [ref=e100]:
+                  - text:    
+                  - generic [ref=e101]: 
+            - paragraph [ref=e105]: 没有更多了
+      - generic [ref=e107]:
+        - button "" [disabled] [ref=e108]
+        - list [ref=e110]:
+          - listitem [ref=e111]: "1"
+        - button "" [disabled] [ref=e112]
+        - generic [ref=e114]:
+          - text: 前往
+          - spinbutton [ref=e116]: "1"
+          - text: 页
