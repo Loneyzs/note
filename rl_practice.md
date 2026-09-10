@@ -1,7 +1,3 @@
-# 强化学习代码实践入门
-
-本文整理 Gym、Gymnasium、Stable-Baselines3、Isaac Sim 和 Isaac Lab 的定位，并给出一条适合从贝尔曼方程和 PPO 理论过渡到代码实践的学习路线。
-
 ## 1. 工具与框架的关系
 
 | 层次 | 工具 | 主要职责 |
